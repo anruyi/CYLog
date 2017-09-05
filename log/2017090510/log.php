@@ -1,6 +1,0 @@
-2017-09-05 10:36:52"ctrl:index    action:index"
-2017-09-05 10:38:54"ctrl:index    action:index"
-2017-09-05 10:39:55"ctrl:index    action:index"
-2017-09-05 10:41:45"ctrl:index    action:index"
-2017-09-05 10:41:47"ctrl:index    action:single"
-2017-09-05 10:41:52"ctrl:index    action:single"

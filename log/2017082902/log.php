@@ -1,5 +1,0 @@
-2017-08-29 02:29:47"ctrl:index    action:index"
-2017-08-29 02:32:19"ctrl:index    action:index"
-2017-08-29 02:32:20"ctrl:index    action:index"
-2017-08-29 02:32:25"ctrl:index    action:index"
-2017-08-29 02:32:26"ctrl:index    action:index"
