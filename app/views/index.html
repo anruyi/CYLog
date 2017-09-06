@@ -1,46 +1,45 @@
-{% extends "layout.html"  %}
+{% extends "layout.html" %}
 {% block content %}
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/app/assets/css/login.css">
 
-</head>
-<!--上封面 -->
-<!--<section class="row featured-post-carousel">-->
-<!--<div class="item post">-->
-<!--<img src="/app/assets/images/featured-posts/1.jpg" alt="" class="img-responsive main-bg">-->
-<!--<div class="post-content">-->
-<!--<div class="container">-->
-<!--<h5 class="post-meta"><i>in</i> <a href="#">Author Profile</a> | <a href="#">feb 17, 2016</a></h5>-->
-<!--<h2 class="post-title"><a href="/index/single">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h2>-->
-<!--<a href="index/single" class="btn btn-primary"><span>read more</span></a>            </div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</section>-->
-<div class="wrapper">
-    <form action="" method="post">
-        <div class="loginBox">
-            <div class="loginBoxCenter">
-                <!--UserName-->
-                <p><label for="username">用户名：</label></p>
-                <p><input type="text" id="text" name="username" class="loginInput" autofocus="autofocus" required="required" autocomplete="off" placeholder="请输入邮箱/手机号" value="" /></p>
-                <!--PassWord-->
-                <p><label for="password">密码：</label></p>
-                <p><input type="password" id="password" name="password" class="loginInput" required="required" placeholder="请输入密码" value="" /></p>
-
-                <p><a class="forgetLink" href="#">忘记密码?</a></p>
-                <input id="remember" type="checkbox" name="remember" />
-                <label for="remember">记住登录状态</label>
-            </div>
-            <div class="loginBoxButtons">
-                <button class="loginBtn">登录</button>
-                <div> 新用户注册</div>
-            </div>
+<!-- 上封面 -->
+<section class="row featured-post-carousel">
+    <div class="item post">
+        <img src="/app/assets/images/featured-posts/1.jpg" alt="" class="img-responsive main-bg">
+        <div class="post-content">
+            <div class="container">
+                <h5 class="post-meta"><i>in</i> <a href="#">Author Profile</a> | <a href="#">feb 17, 2016</a></h5>
+                <h2 class="post-title"><a href="/index/single">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h2>
+                <a href="index/single" class="btn btn-primary"><span>read more</span></a>            </div>
         </div>
-    </form>
-</div>
-<!--<script rel="stylesheet" href="/app/assets/js/login.js"></script>-->
-<script>
-    console.log();
-</script>
+    </div>
+</section>
+
+<section class="row content-wrap">
+    <div class="container">
+        <div class="row" id="post-masonry">
+            {% for key in data.id|keys %}
+            <!--Blog Post-->
+            <article class="col-sm-4 post post-masonry post-format-image">
+                <div class="post-wrapper row">
+                    <div class="featured-content row">
+                        <a href="/index/single"><img src="/app/assets/images/posts/masonry/1.jpg" alt="" class="img-responsive"></a>                    </div>
+                    <div class="post-excerpt row">
+                        <h5 class="post-meta">
+                            <a href="#" class="date">{{data.created_at[key]|date('d')}} {{data.created_at[key]|date('m')}}, {{data.created_at[key]|date('Y')}}</a>
+                            <span class="post-author"><i>by</i><a href="#">{{data.author[key]}}</a></span>
+                        </h5>
+                        <h3 class="post-title"><a href="index/single">{{data.title[key]}}</a></h3>
+                        <p>{{data.summary[key]}}</p>
+                        <footer class="row">
+                            <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
+                            <div class="response-count"><img src="/app/assets/images/comment-icon-gray.png" alt="">5</div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock %}
+
