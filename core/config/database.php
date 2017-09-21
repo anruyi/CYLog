@@ -7,9 +7,9 @@
  */
 return array(
         'database_type' => 'mysql',
-        'database_name' => 'cyphp',
+        'database_name' => 'cylog',
         'server' => 'localhost',
-        'username' => 'cyphp',
+        'username' => 'cylog',
         'password' => '123456',
         'charset' => 'utf8'
 );

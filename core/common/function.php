@@ -32,3 +32,39 @@ function p($var2, $var1='')
             "</pre>";
     }
 }
+
+/**
+ * @param $name post参数
+ * @param bool $default 默认返回值
+ * @param bool $fitt 验证规则
+ * @return bool
+ */
+function post($name, $default=false, $fitt=false)
+{
+    if (isset($_POST[$name])) {
+        if ($fitt) {
+            switch ($fitt) {
+                case 'int':
+                    if(is_numeric($_POST[$name]))
+                        return $_POST[$name];
+                    else
+                        return $default;
+                    break;
+                    default:;
+            }
+        } else {
+            return $_POST[$name];
+        }
+    } else {
+        return $default;
+    }
+}
+
+/**
+ * @param $url
+ */
+function jump($url)
+{
+    header("Location:".$url);
+    exit;
+}

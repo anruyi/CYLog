@@ -1,14 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ChenYi
- * Date: 17-8-18
- * Time: 14:53
- */
 
 namespace core;
 
-use app\ctrl\indexCtrl;
 use core\lib\Log;
 use core\lib\Route;
 
@@ -45,13 +38,14 @@ class CyPHP
          * 获取Route()的控制器名（自动追加Crtl.php）和方法
          */
         $route = new Route();
-        $ctrlClass = $route->ctrl;
+        $ctrlName = $route->ctrl;
         $ctrlAction = $route->action;
-        $ctrlPath = APP.'/ctrl/'.$ctrlClass.'Ctrl.php';
+        $ctrlPath = APP.'/ctrl/'.$ctrlName.'Ctrl.php';
         if (is_file($ctrlPath)){
-            $indexCtrl = new indexCtrl();
+            $ctrlClass = '\app\ctrl\\'.$ctrlName.'Ctrl';
+            $indexCtrl = new $ctrlClass();
             $indexCtrl->$ctrlAction();
-            Log::log('ctrl:'.$ctrlClass.'    '.'action:'.$ctrlAction);
+            Log::log('ctrl:'.$ctrlName.'    '.'action:'.$ctrlAction);
         }else {
             throw new \Exception('找不到控制器'.$ctrlPath);
         }

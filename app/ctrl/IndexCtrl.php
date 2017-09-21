@@ -4,6 +4,7 @@
 namespace app\ctrl;
 
 use app\model\GuestModel;
+use app\model\IndexModel;
 use core\CyPHP;
 
 class indexCtrl extends CyPHP
@@ -13,10 +14,9 @@ class indexCtrl extends CyPHP
      */
     public function index()
     {
-        $model = new GuestModel();
-        $data = $model->all();
+        $model = new IndexModel();
+        $data = $model->getPostCover();
         $this->assign('data',$data);
-        $this->assign('CYPHP',CYPHP);
         $this->display('index.html');
     }
 
@@ -29,25 +29,10 @@ class indexCtrl extends CyPHP
         $this->display('layout.html');
     }
 
-    /**
-     * 关于
-     */
-    public function about()
-    {
-
-        $this->display('about.html');
-    }
 
     public function single()
     {
         $this->display('single.html');
     }
 
-    /**
-     * 保存留言
-     */
-    public function save()
-    {
-
-    }
 }

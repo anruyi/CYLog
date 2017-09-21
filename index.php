@@ -45,5 +45,4 @@ include CORE.'/CyPHP.php';
 spl_autoload_register("core\CyPHP::load");
 
 
-
 CyPHP::run();
