@@ -50,7 +50,6 @@ class IndexModel extends Model
             'id' => $this->select($this->table,'id'),
             'title' => $this->select($this->table,'title'),
             'author' => $this->select($this->table,'author'),
-            'summary' => $this->select($this->table,'summary'),
             'content' => $this->select($this->table, 'content'),
             'created_at' => $this->select($this->table,'created_at'),
             'updated_at' => $this->select($this->table,'updated_at'),

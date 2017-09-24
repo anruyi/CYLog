@@ -132,17 +132,21 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
     <div class=\"container\">
         <div class=\"row\">
             <div class=\"col-md-8 single-post-contents\">
+                <!--文章块开始-->
                 <article class=\"single-post-content row m0 post\">
                     <!--文章标题-->
                     <header class=\"row\">                        
                         <h5 class=\"post-meta\">
                             <a href=\"#\" class=\"date\">feb 17, 2016</a>
-                            <span class=\"post-author\"><i>by</i><a href=\"#\">Mark Sanders</a></span>
+                            <span class=\"post-author\"><i>by</i><a href=\"#\">";
+        // line 120
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "author", array()), (isset($context["id"]) ? $context["id"] : null), array(), "array"), "html", null, true);
+        echo "</a></span>
                         </h5>
                         <h2 class=\"post-title\">";
-        // line 121
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "title", array(), "array"), 0, array(), "array"), "html", null, true);
-        echo "Nature, in the broadest sense, is the natural, physical, or material world or universe.</h2>
+        // line 122
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "title", array()), (isset($context["id"]) ? $context["id"] : null), array(), "array"), "html", null, true);
+        echo "</h2>
                         <div class=\"row\">
                             <h5 class=\"taxonomy pull-left\"><i>in</i> <a href=\"#\">image</a>, <a href=\"#\">entertainment</a></h5>
                             <div class=\"response-count pull-right\"><img src=\"/app/assets/images/comment-icon-gray.png\" alt=\"\">5</div>
@@ -151,61 +155,24 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                     <!--文章标题END-->
 
                     <!--文章内容-->
-                    <div class=\"featured-content row m0\">
-                        <a href=\"#\"><img src=\"/app/assets/images/posts/6.jpg\" alt=\"\"></a>
-                    </div>
-                    <div class=\"post-content row\">
-                        <h4>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h4>
-                        <br>
-                        <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-                        <br>
-                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        <br>
-                        <blockquote class=\"has-sign row m0\">
-                            <div>
-                                <p>If everybody learns this simple art of loving his work, whatever it is, enjoying it without asking for any recognition, we would have more beautiful and celebrating world.</p>
-                                <footer>OSHO</footer>
-                            </div>
-                        </blockquote>
-                        <h3>Sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-                        <br>
-                        <ul class=\"triangle-list nav\">
-                            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
-                            <li>Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
-                        </ul>
-                        <ul class=\"circle-list nav\">
-                            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
-                            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        </ul>
-                        <br>
-                        <blockquote class=\"no-sign\">
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        </blockquote>
-                        <br>
-                        <div class=\"row\">
-                            <div class=\"col-sm-6\">
-                                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                            </div>
-                            <div class=\"col-sm-6\">
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                            </div>
-                        </div>
-                        <!--<br>-->
-                        <!--&lt;!&ndash; 16:9 aspect ratio &ndash;&gt;-->
-                        <!--<div class=\"embed-responsive embed-responsive-16by9\">-->
-                            <!--<iframe class=\"embed-responsive-item\" src=\"https://www.youtube.com/embed/Gi3ZT4JttVI\"></iframe>-->
-                        <!--</div>-->
-                        <!--<br>-->
+                    ";
+        // line 132
+        echo "                        ";
+        echo $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), (isset($context["id"]) ? $context["id"] : null), array(), "array");
+        echo "
+                    ";
+        // line 134
+        echo "                    <!--文章内容END-->
 
-                        <br>
-                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    </div>
+                    <!--文章标签-->
                     <div class=\"row m0 tags\">
                         <a href=\"#\" class=\"tag\">music</a>
                         <a href=\"#\" class=\"tag\">tegs</a>
                         <a href=\"#\" class=\"tag\">tegs hover</a>
                     </div>
-                    
+                    <!--文章标签END-->
+
+                    <!--文章翻页-->
                     <ul class=\"pager\">
                         <li>
                             <h4>Previous Articles</h4>
@@ -218,7 +185,9 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                             <h5 class=\"taxonomy pull-left\"><i>in</i> <a href=\"#\">image</a>, <a href=\"#\">entertainment</a></h5>
                         </li>
                     </ul>
-                    
+                    <!--文章翻页END-->
+
+                    <!--文章评论-->
                     <div class=\"row m0 comments\">
                         <h5 class=\"response-count\">5 comments<a href=\"#comment-form\" class=\"btn btn-primary pull-right\"><span>add comment</span></a></h5>
                         <!--Comments-->
@@ -278,6 +247,9 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                         </div>
                     </div>
                     </div>
+                    <!--文章评论END-->
+
+                    <!--评论提交-->
                     <form action=\"#\" method=\"post\" class=\"comment-form row\" id=\"comment-form\">
                         <h5 class=\"form-title\">leave a reply</h5>
                         <div class=\"form-group col-sm-6\">
@@ -305,8 +277,13 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                             <h5 class=\"pull-right\">*required fields</h5>
                         </div>
                     </form>
+                    <!--评论提交END-->
+
                 </article>
+                <!--文章块END-->
             </div>
+
+            <!--侧边栏-->
             <div class=\"col-md-4 sidebar\">               
                 <!--Author Widget-->
                 <aside class=\"row m0 widget-author widget\">
@@ -343,6 +320,7 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                     </div>
                 </aside>
             </div>
+            <!--侧边栏END-->
         </div>
     </div>
 </section>
@@ -411,7 +389,7 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 
     public function getDebugInfo()
     {
-        return array (  144 => 121,  70 => 50,  19 => 1,);
+        return array (  165 => 134,  160 => 132,  148 => 122,  143 => 120,  70 => 50,  19 => 1,);
     }
 }
 /* ﻿<!DOCTYPE html>*/
@@ -527,14 +505,15 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*     <div class="container">*/
 /*         <div class="row">*/
 /*             <div class="col-md-8 single-post-contents">*/
+/*                 <!--文章块开始-->*/
 /*                 <article class="single-post-content row m0 post">*/
 /*                     <!--文章标题-->*/
 /*                     <header class="row">                        */
 /*                         <h5 class="post-meta">*/
 /*                             <a href="#" class="date">feb 17, 2016</a>*/
-/*                             <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>*/
+/*                             <span class="post-author"><i>by</i><a href="#">{{data.author[id]}}</a></span>*/
 /*                         </h5>*/
-/*                         <h2 class="post-title">{{data['title'][0]}}Nature, in the broadest sense, is the natural, physical, or material world or universe.</h2>*/
+/*                         <h2 class="post-title">{{data.title[id]}}</h2>*/
 /*                         <div class="row">*/
 /*                             <h5 class="taxonomy pull-left"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>*/
 /*                             <div class="response-count pull-right"><img src="/app/assets/images/comment-icon-gray.png" alt="">5</div>*/
@@ -543,61 +522,20 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*                     <!--文章标题END-->*/
 /* */
 /*                     <!--文章内容-->*/
-/*                     <div class="featured-content row m0">*/
-/*                         <a href="#"><img src="/app/assets/images/posts/6.jpg" alt=""></a>*/
-/*                     </div>*/
-/*                     <div class="post-content row">*/
-/*                         <h4>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h4>*/
-/*                         <br>*/
-/*                         <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>*/
-/*                         <br>*/
-/*                         <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>*/
-/*                         <br>*/
-/*                         <blockquote class="has-sign row m0">*/
-/*                             <div>*/
-/*                                 <p>If everybody learns this simple art of loving his work, whatever it is, enjoying it without asking for any recognition, we would have more beautiful and celebrating world.</p>*/
-/*                                 <footer>OSHO</footer>*/
-/*                             </div>*/
-/*                         </blockquote>*/
-/*                         <h3>Sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>*/
-/*                         <br>*/
-/*                         <ul class="triangle-list nav">*/
-/*                             <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>*/
-/*                             <li>Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>*/
-/*                         </ul>*/
-/*                         <ul class="circle-list nav">*/
-/*                             <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>*/
-/*                             <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>*/
-/*                         </ul>*/
-/*                         <br>*/
-/*                         <blockquote class="no-sign">*/
-/*                             <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>*/
-/*                         </blockquote>*/
-/*                         <br>*/
-/*                         <div class="row">*/
-/*                             <div class="col-sm-6">*/
-/*                                 <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>*/
-/*                             </div>*/
-/*                             <div class="col-sm-6">*/
-/*                                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>*/
-/*                             </div>*/
-/*                         </div>*/
-/*                         <!--<br>-->*/
-/*                         <!--&lt;!&ndash; 16:9 aspect ratio &ndash;&gt;-->*/
-/*                         <!--<div class="embed-responsive embed-responsive-16by9">-->*/
-/*                             <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Gi3ZT4JttVI"></iframe>-->*/
-/*                         <!--</div>-->*/
-/*                         <!--<br>-->*/
+/*                     {% autoescape false %}*/
+/*                         {{data.content[id]}}*/
+/*                     {% endautoescape %}*/
+/*                     <!--文章内容END-->*/
 /* */
-/*                         <br>*/
-/*                         <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>*/
-/*                     </div>*/
+/*                     <!--文章标签-->*/
 /*                     <div class="row m0 tags">*/
 /*                         <a href="#" class="tag">music</a>*/
 /*                         <a href="#" class="tag">tegs</a>*/
 /*                         <a href="#" class="tag">tegs hover</a>*/
 /*                     </div>*/
-/*                     */
+/*                     <!--文章标签END-->*/
+/* */
+/*                     <!--文章翻页-->*/
 /*                     <ul class="pager">*/
 /*                         <li>*/
 /*                             <h4>Previous Articles</h4>*/
@@ -610,7 +548,9 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*                             <h5 class="taxonomy pull-left"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>*/
 /*                         </li>*/
 /*                     </ul>*/
-/*                     */
+/*                     <!--文章翻页END-->*/
+/* */
+/*                     <!--文章评论-->*/
 /*                     <div class="row m0 comments">*/
 /*                         <h5 class="response-count">5 comments<a href="#comment-form" class="btn btn-primary pull-right"><span>add comment</span></a></h5>*/
 /*                         <!--Comments-->*/
@@ -670,6 +610,9 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*                         </div>*/
 /*                     </div>*/
 /*                     </div>*/
+/*                     <!--文章评论END-->*/
+/* */
+/*                     <!--评论提交-->*/
 /*                     <form action="#" method="post" class="comment-form row" id="comment-form">*/
 /*                         <h5 class="form-title">leave a reply</h5>*/
 /*                         <div class="form-group col-sm-6">*/
@@ -697,8 +640,13 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*                             <h5 class="pull-right">*required fields</h5>*/
 /*                         </div>*/
 /*                     </form>*/
+/*                     <!--评论提交END-->*/
+/* */
 /*                 </article>*/
+/*                 <!--文章块END-->*/
 /*             </div>*/
+/* */
+/*             <!--侧边栏-->*/
 /*             <div class="col-md-4 sidebar">               */
 /*                 <!--Author Widget-->*/
 /*                 <aside class="row m0 widget-author widget">*/
@@ -735,6 +683,7 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*                     </div>*/
 /*                 </aside>*/
 /*             </div>*/
+/*             <!--侧边栏END-->*/
 /*         </div>*/
 /*     </div>*/
 /* </section>*/
