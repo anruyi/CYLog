@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>INput</title>
+    <style type="text/css">
+        .body {
+            width: 60%;
+            margin: 0 auto 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+<div class="body">
+    <div id="Editor">
+        <p>欢迎使用 CYLog</p>
+    </div>
+</div>
+<!-- 引用js -->
+<script type="text/javascript" src="../assets/release/wangEditor.js"></script>
+<script type="text/javascript">
+    var E = window.wangEditor;
+    var editor2 = new E('#Editor');
+
+//    editor2.customConfig.uploadImgServer = '/upload';  // 上传图片到服务器/app/views/dataBase/PostPictures
+    editor2.customConfig.uploadImgShowBase64 = true   // 使用 base64 保存图片
+
+    editor2.create();
+</script>
+</body>
+</html>

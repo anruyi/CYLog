@@ -17,7 +17,9 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<!DOCTYPE html>
+        echo "<!--------------------------->
+<!--本页面并不使用，但是留作蓝本-->
+<!--------------------------->
 <html lang=\"zh-cn\">
 <head>
     <meta charset=\"utf-8\">
@@ -62,7 +64,7 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
                 </form>
             </div>
             <div class=\"col-sm-4 logo-col text-center\">
-                <a href=\"index/index\"><img src=\"/app/assets/images/logo-white-green.png\" alt=\"\"></a>
+                <a href=\"/index/index\"><img src=\"/app/assets/images/logo-white-green.png\" alt=\"\"></a>
             </div>
             <div class=\"col-sm-4 menu-trigger-col\">
                 <button class=\"menu-trigger pull-right\">
@@ -90,8 +92,8 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
                                     <!--<li><a href=\"index6.html\">Home Option 6</a></li>-->
                                 </ul>
                             </li>
-                            <li><a href=\"index/about\">About</a></li>
-                            <li><a href=\"index/single\">Blog Single 1</a></li>
+                            <li><a href=\"/index/about\">About</a></li>
+                            <li><a href=\"/Admin/login\">login</a></li>
                             <li><a href=\"index/single2\">Blog Single 2</a></li>
                         </ul>
                         <ul class=\"nav column-menu black-bg\">
@@ -123,9 +125,9 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 </header>
 <div>
 ";
-        // line 106
+        // line 108
         $this->displayBlock('content', $context, $blocks);
-        // line 109
+        // line 111
         echo "</div>
 <!--Footer-->
 <footer class=\"row\" id=\"footer\">
@@ -138,7 +140,8 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
                 <div class=\"row\">
                     <ul class=\"nav column-menu white-bg\">
                         <li class=\"active\"><a href=\"index/index\">Home</a></li>
-                        <li><a href=\"index/about\">About</a></li>
+                        <li><a href=\"/index/about\">About</a></li>
+                        <li><a href=\"/admin/login\">Login</a></li>
                         <li><a href=\"index/single\">Blog Single 1</a></li>
                         <li><a href=\"index/single2\">Blog Single 2</a></li>
                     </ul>
@@ -175,10 +178,10 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 ";
     }
 
-    // line 106
+    // line 108
     public function block_content($context, array $blocks = array())
     {
-        // line 107
+        // line 109
         echo "
 ";
     }
@@ -190,10 +193,12 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 
     public function getDebugInfo()
     {
-        return array (  182 => 107,  179 => 106,  129 => 109,  127 => 106,  20 => 1,);
+        return array (  185 => 109,  182 => 108,  131 => 111,  129 => 108,  20 => 1,);
     }
 }
-/* <!DOCTYPE html>*/
+/* <!--------------------------->*/
+/* <!--本页面并不使用，但是留作蓝本-->*/
+/* <!--------------------------->*/
 /* <html lang="zh-cn">*/
 /* <head>*/
 /*     <meta charset="utf-8">*/
@@ -238,7 +243,7 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 /*                 </form>*/
 /*             </div>*/
 /*             <div class="col-sm-4 logo-col text-center">*/
-/*                 <a href="index/index"><img src="/app/assets/images/logo-white-green.png" alt=""></a>*/
+/*                 <a href="/index/index"><img src="/app/assets/images/logo-white-green.png" alt=""></a>*/
 /*             </div>*/
 /*             <div class="col-sm-4 menu-trigger-col">*/
 /*                 <button class="menu-trigger pull-right">*/
@@ -266,8 +271,8 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 /*                                     <!--<li><a href="index6.html">Home Option 6</a></li>-->*/
 /*                                 </ul>*/
 /*                             </li>*/
-/*                             <li><a href="index/about">About</a></li>*/
-/*                             <li><a href="index/single">Blog Single 1</a></li>*/
+/*                             <li><a href="/index/about">About</a></li>*/
+/*                             <li><a href="/Admin/login">login</a></li>*/
 /*                             <li><a href="index/single2">Blog Single 2</a></li>*/
 /*                         </ul>*/
 /*                         <ul class="nav column-menu black-bg">*/
@@ -313,7 +318,8 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 /*                 <div class="row">*/
 /*                     <ul class="nav column-menu white-bg">*/
 /*                         <li class="active"><a href="index/index">Home</a></li>*/
-/*                         <li><a href="index/about">About</a></li>*/
+/*                         <li><a href="/index/about">About</a></li>*/
+/*                         <li><a href="/admin/login">Login</a></li>*/
 /*                         <li><a href="index/single">Blog Single 1</a></li>*/
 /*                         <li><a href="index/single2">Blog Single 2</a></li>*/
 /*                     </ul>*/

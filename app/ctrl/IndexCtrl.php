@@ -16,7 +16,9 @@ class indexCtrl extends CyPHP
     {
         $model = new IndexModel();
         $data = $model->getPostCover();
+
         $this->assign('data',$data);
+
         $this->display('index.html');
     }
 
@@ -32,6 +34,14 @@ class indexCtrl extends CyPHP
 
     public function single()
     {
+        /**
+         * 创建模型，获取内容数据
+         */
+        $model = new IndexModel();
+        $data = $model->getPostCover();
+
+        $this->assign('data',$data);
+
         $this->display('single.html');
     }
 
