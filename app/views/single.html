@@ -47,7 +47,7 @@
                 </form>
             </div>
             <div class="col-sm-4 logo-col text-center">
-                <a href="index6.html"><img src="/app/assets/images/logo-black-green.png" alt=""></a>
+                <a href="/index/index"><img src="/app/assets/images/logo-black-green.png" alt="">{{data.id[1]}}</a>
             </div>
             <div class="col-sm-4 menu-trigger-col">
                 <button class="menu-trigger black pull-right">
@@ -106,23 +106,28 @@
         </div>
     </div>
 </header>
-
+<!--所有内容-->
 <section class="row content-wrap">
     <div class="container">
         <div class="row">
             <div class="col-md-8 single-post-contents">
+                <!--文章块开始-->
                 <article class="single-post-content row m0 post">
+                    <!--文章标题-->
                     <header class="row">                        
                         <h5 class="post-meta">
                             <a href="#" class="date">feb 17, 2016</a>
                             <span class="post-author"><i>by</i><a href="#">Mark Sanders</a></span>
                         </h5>
-                        <h2 class="post-title">Nature, in the broadest sense, is the natural, physical, or material world or universe.</h2>
+                        <h2 class="post-title">{{data['title'][0]}}Nature, in the broadest sense, is the natural, physical, or material world or universe.</h2>
                         <div class="row">
                             <h5 class="taxonomy pull-left"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
                             <div class="response-count pull-right"><img src="/app/assets/images/comment-icon-gray.png" alt="">5</div>
                         </div>
                     </header>
+                    <!--文章标题END-->
+
+                    <!--文章内容-->
                     <div class="featured-content row m0">
                         <a href="#"><img src="/app/assets/images/posts/6.jpg" alt=""></a>
                     </div>
@@ -162,47 +167,24 @@
                                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
                             </div>
                         </div>
-                        <br>
-                        <!-- 16:9 aspect ratio -->
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Gi3ZT4JttVI"></iframe>
-                        </div>
-                        <br>
-                        
-                        <!-- Place somewhere in the <body> of your page -->
-                        <div class="thumbCarousel row m0">
-                            <div id="slider" class="flexslider">
-                                <ul class="slides">
-                                    <li><img src="/app/assets/images/posts/gallery/1.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/2.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/3.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/4.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/1.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/2.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/3.jpg" alt=""></li>
-                                </ul>
-                            </div>
-                            <div id="carousel" class="flexslider">
-                                <ul class="slides">
-                                    <li><img src="/app/assets/images/posts/gallery/s1.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/s2.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/s3.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/s4.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/s1.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/s2.jpg" alt=""></li>
-                                    <li><img src="/app/assets/images/posts/gallery/s3.jpg" alt=""></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <br>
+                        <!--<br>-->
+                        <!--&lt;!&ndash; 16:9 aspect ratio &ndash;&gt;-->
+                        <!--<div class="embed-responsive embed-responsive-16by9">-->
+                            <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Gi3ZT4JttVI"></iframe>-->
+                        <!--</div>-->
+                        <!--<br>-->
                         <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     </div>
+
+                    <!--文章标签-->
                     <div class="row m0 tags">
                         <a href="#" class="tag">music</a>
                         <a href="#" class="tag">tegs</a>
                         <a href="#" class="tag">tegs hover</a>
                     </div>
-                    
+                    <!--文章标签END-->
+
+                    <!--文章翻页-->
                     <ul class="pager">
                         <li>
                             <h4>Previous Articles</h4>
@@ -215,7 +197,9 @@
                             <h5 class="taxonomy pull-left"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
                         </li>
                     </ul>
-                    
+                    <!--文章翻页END-->
+
+                    <!--文章评论-->
                     <div class="row m0 comments">
                         <h5 class="response-count">5 comments<a href="#comment-form" class="btn btn-primary pull-right"><span>add comment</span></a></h5>
                         <!--Comments-->
@@ -275,6 +259,9 @@
                         </div>
                     </div>
                     </div>
+                    <!--文章评论END-->
+
+                    <!--评论提交-->
                     <form action="#" method="post" class="comment-form row" id="comment-form">
                         <h5 class="form-title">leave a reply</h5>
                         <div class="form-group col-sm-6">
@@ -302,8 +289,13 @@
                             <h5 class="pull-right">*required fields</h5>
                         </div>
                     </form>
+                    <!--评论提交END-->
+
                 </article>
+                <!--文章块END-->
             </div>
+
+            <!--侧边栏-->
             <div class="col-md-4 sidebar">               
                 <!--Author Widget-->
                 <aside class="row m0 widget-author widget">
@@ -340,9 +332,12 @@
                     </div>
                 </aside>
             </div>
+            <!--侧边栏END-->
         </div>
     </div>
 </section>
+<!--所有内容END-->
+
 
 <!--Footer-->
 <footer class="row" id="footer">
@@ -376,7 +371,6 @@
                 </form>
             </div>
         </div>
-        <h5 class="copyright">Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://www.17sucai.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></h5>
     </div>
 </footer>
 
