@@ -3,6 +3,7 @@ namespace app\ctrl;
 
 use app\model\AdminModel;
 
+use app\model\IndexModel;
 use core\CyPHP;
 
 class AdminCtrl extends CyPHP
@@ -77,6 +78,23 @@ class AdminCtrl extends CyPHP
     public function about()
     {
         $this->display('about.html');
+    }
+
+    /**
+     * 发布文章
+     */
+    public function posting()
+    {
+        $model = new AdminModel();
+        $post['title'] = post('title','NULL');
+        $post['content'] = post('content');
+        $post['author'] = post('author','NULL');
+        if($post['title']=="NULL"&&$post['author']='NULL'){
+
+        }else{
+            $model->insertOne($post['title'],$post['author'],$post['content']);
+        }
+        $this->display('postEditor.html');
     }
 
 }

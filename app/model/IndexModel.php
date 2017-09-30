@@ -56,4 +56,29 @@ class IndexModel extends Model
         ];
         return $data;
     }
+
+    /**
+     * @return array
+     * 获得一篇文章
+     */
+    public function getPostOne($id)
+    {
+        $data =
+            $this->select(
+                $this->table,
+                [
+                    "title",
+                    'author',
+                    'content',
+                    'created_at',
+                    'updated_at',
+                ],
+                [
+                    "id[=]" => $id,
+                ]
+            );
+        return $data;
+    }
+
+
 }
