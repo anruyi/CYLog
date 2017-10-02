@@ -1,5 +1,0 @@
-2017-09-24 13:02:56"ctrl:index    action:single"
-2017-09-24 13:18:09"ctrl:index    action:index"
-2017-09-24 13:19:11"ctrl:Admin    action:login"
-2017-09-24 13:19:21"ctrl:Admin    action:login"
-2017-09-24 13:19:22"ctrl:Admin    action:login"

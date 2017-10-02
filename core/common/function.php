@@ -62,6 +62,7 @@ function post($name, $default=false, $fitt=false)
 
 /**
  * @param $url
+ * [注意]jump之前不能有display()
  */
 function jump($url)
 {

@@ -7,13 +7,24 @@ use app\model\GuestModel;
 use app\model\IndexModel;
 use core\CyPHP;
 
+/**
+ * Class indexCtrl
+ * @package app\ctrl
+ * 目前只有两个功能
+ * 一、获取所有post的封面并以瀑布流的形式展现 index
+ * 二、获取指定页面数据 single
+ * 三、跳转关于页面
+ */
 class indexCtrl extends CyPHP
 {
     /**
-     * 所有留言
+     * 默认显示所有留言
      */
     public function index()
     {
+        /**
+         * 创建默认模型，获取内容数据
+         */
         $model = new IndexModel();
         $data = $model->getPostCover();
 
@@ -23,49 +34,34 @@ class indexCtrl extends CyPHP
     }
 
     /**
-     * 添加留言
+     * 显示指定页面
      */
-    public function layout()
-    {
-
-        $this->display('layout.html');
-    }
-
-
     public function single()
     {
         /**
-         * 创建模型，获取内容数据
+         * 创建默认模型，获取内容数据
          */
         $model = new IndexModel();
+
         $data = $model->getPostOne($_GET['id']);
+
         /**
          * 分别打入Post表单数据库信息和路由页面id数据
          */
         $this->assign('data',$data);
+
         $this->assign('id', $_GET['id']);
 
         $this->display('single.html');
     }
 
-    public function editor()
+    /**
+     * 关于页面显示
+     */
+    public function about()
     {
-        $this->display('EditorExample.html');
+        $this->display('about.html');
     }
 
-
-    public function test()
-    {
-        $this->display('test.html');
-    }
-
-    public function postEditor()
-    {
-        if(isset($_POST['username'])) {
-            p("hello");
-        }
-        $this->display('postEditor.html');
-
-    }
 
 }

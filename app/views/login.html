@@ -1,4 +1,6 @@
-
+{% extends "layout.html" %}
+{% block content %}
+{% include "common/singleHead.html" %}
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/app/assets/css/login.css">
@@ -8,7 +10,7 @@
 
 <div class="wrapper">
     <button class="loginBtn">登录</button>
-    <form id="myForm" action="/Admin/test" class="myForm" method="post" >
+    <form id="myForm" action="" class="myForm" method="post" >
 
         <div class="loginBox">
             <div class="loginBoxCenter">
@@ -34,16 +36,26 @@
 <script>
 
     $("button").click(function(){
-        $.get("/Admin/login",function(data,status){
-            alert("数据: " + data + "\n状态: " + status);
-        });
-    });
-
-    function testUser() {
         var username = $("#username").val();
         var password = $("#password").val();
-        alert("<?= $data['username'] ?>");
-    }
+        var content = "c";
+
+        var xmlhttp;
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                $(".myForm").innerHTML=xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("POST","/admin/login/",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("username="+username+"&password="+password+"&content="+content);
+    });
 
 </script>
-put
+
+<!--=========尾巴========-->
+{% include "common/commonFoot.html" %}
+
+{% endblock %}

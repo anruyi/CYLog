@@ -60,12 +60,8 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
         $this->displayBlock('content', $context, $blocks);
         // line 42
         echo "</div>
-<!--Footer-->
-";
-        // line 44
-        $this->loadTemplate("common/commonFoot.html", "layout.html", 44)->display($context);
-        // line 45
-        echo "<!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->
+
+<!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->
 <script src=\"/app/assets/js/jquery-2.2.0.min.js\"></script>
 <script src=\"/app/assets/js/bootstrap.min.js\"></script>
 <script src=\"/app/assets/vendors/owl-carousel/owl.carousel.min.js\"></script>
@@ -92,14 +88,9 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
         return "layout.html";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  86 => 40,  83 => 39,  68 => 45,  66 => 44,  62 => 42,  60 => 39,  20 => 1,);
+        return array (  82 => 40,  79 => 39,  62 => 42,  60 => 39,  20 => 1,);
     }
 }
 /* <!--------------------------->*/
@@ -144,8 +135,7 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 /* */
 /* {% endblock %}*/
 /* </div>*/
-/* <!--Footer-->*/
-/* {% include "common/commonFoot.html" %}*/
+/* */
 /* <!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->*/
 /* <script src="/app/assets/js/jquery-2.2.0.min.js"></script>*/
 /* <script src="/app/assets/js/bootstrap.min.js"></script>*/

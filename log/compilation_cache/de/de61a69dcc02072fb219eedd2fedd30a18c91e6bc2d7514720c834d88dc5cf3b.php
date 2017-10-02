@@ -105,6 +105,12 @@ class __TwigTemplate_90ee635b08188655e4e5676ac73d594251f86eccd9a060dd28c1de3167b
     </div>
 </section>
 <!--文章概要流END-->
+
+";
+        // line 49
+        $this->loadTemplate("common/commonFoot.html", "index.html", 49)->display($context);
+        // line 50
+        echo "
 ";
     }
 
@@ -120,7 +126,7 @@ class __TwigTemplate_90ee635b08188655e4e5676ac73d594251f86eccd9a060dd28c1de3167b
 
     public function getDebugInfo()
     {
-        return array (  104 => 44,  89 => 35,  85 => 34,  80 => 32,  72 => 31,  66 => 28,  60 => 24,  56 => 23,  36 => 5,  34 => 4,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  113 => 50,  111 => 49,  104 => 44,  89 => 35,  85 => 34,  80 => 32,  72 => 31,  66 => 28,  60 => 24,  56 => 23,  36 => 5,  34 => 4,  31 => 3,  28 => 2,  11 => 1,);
     }
 }
 /* {% extends "layout.html" %}*/
@@ -170,6 +176,9 @@ class __TwigTemplate_90ee635b08188655e4e5676ac73d594251f86eccd9a060dd28c1de3167b
 /*     </div>*/
 /* </section>*/
 /* <!--文章概要流END-->*/
+/* */
+/* {% include "common/commonFoot.html" %}*/
+/* */
 /* {% endblock %}*/
 /* */
 /* */

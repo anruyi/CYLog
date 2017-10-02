@@ -56,12 +56,13 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 </head>
 <body class=\"home\">
 
-<!--head-->
+<!--header-->
 ";
         // line 39
         $this->loadTemplate("common/singleHead.html", "single.html", 39)->display($context);
         // line 40
-        echo "
+        echo "<!--headerEND-->
+
 <!--所有内容-->
 <section class=\"row content-wrap\">
     <div class=\"container\" style=\"padding: 2px\">
@@ -74,12 +75,12 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                         <h5 class=\"post-meta\">
                             <a href=\"#\" class=\"date\">feb 17, 2016</a>
                             <span class=\"post-author\"><i>by</i><a href=\"#\">";
-        // line 52
+        // line 53
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), 0, array(), "array"), "author", array()), "html", null, true);
         echo "</a></span>
                         </h5>
                         <h2 class=\"post-title\">";
-        // line 54
+        // line 55
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), 0, array(), "array"), "title", array()), "html", null, true);
         echo "</h2>
                         <div class=\"row\">
@@ -92,12 +93,12 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                     <!--文章内容-->
                     <div class=\"post-content\">
                         ";
-        // line 65
+        // line 66
         echo "                        ";
         echo $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), 0, array(), "array"), "content", array());
         echo "
                         ";
-        // line 67
+        // line 68
         echo "                    </div>
 
                         <!--文章内容END-->
@@ -127,9 +128,9 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 
                     <!--文章评论-->
                     ";
-        // line 95
-        $this->loadTemplate("plug/commont.html", "single.html", 95)->display($context);
         // line 96
+        $this->loadTemplate("plug/commont.html", "single.html", 96)->display($context);
+        // line 97
         echo "
                 </article>
                 <!--文章块END-->
@@ -139,21 +140,21 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
             <div class=\"col-md-4 sidebar\">               
                 <!--Author Widget-->
                 ";
-        // line 104
-        $this->loadTemplate("plug/author.html", "single.html", 104)->display($context);
         // line 105
+        $this->loadTemplate("plug/author.html", "single.html", 105)->display($context);
+        // line 106
         echo "
                 <!--Twitter Widget-->
                 ";
-        // line 107
-        $this->loadTemplate("plug/twitter.html", "single.html", 107)->display($context);
         // line 108
+        $this->loadTemplate("plug/twitter.html", "single.html", 108)->display($context);
+        // line 109
         echo "
                 <!--Instagram Widget-->
                 ";
-        // line 110
-        $this->loadTemplate("plug/instagram.html", "single.html", 110)->display($context);
         // line 111
+        $this->loadTemplate("plug/instagram.html", "single.html", 111)->display($context);
+        // line 112
         echo "
             </div>
             <!--侧边栏END-->
@@ -166,10 +167,11 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 
 <!--Footer-->
 ";
-        // line 122
-        $this->loadTemplate("common/CommonFoot.html", "single.html", 122)->display($context);
         // line 123
-        echo "
+        $this->loadTemplate("common/CommonFoot.html", "single.html", 123)->display($context);
+        // line 124
+        echo "<!--FooterEND-->
+
 <!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->
 <script src=\"/app/assets/js/jquery-2.2.0.min.js\"></script>
 <script src=\"/app/assets/js/bootstrap.min.js\"></script>
@@ -197,7 +199,7 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 
     public function getDebugInfo()
     {
-        return array (  172 => 123,  170 => 122,  157 => 111,  155 => 110,  151 => 108,  149 => 107,  145 => 105,  143 => 104,  133 => 96,  131 => 95,  101 => 67,  96 => 65,  83 => 54,  78 => 52,  64 => 40,  62 => 39,  28 => 8,  19 => 1,);
+        return array (  173 => 124,  171 => 123,  158 => 112,  156 => 111,  152 => 109,  150 => 108,  146 => 106,  144 => 105,  134 => 97,  132 => 96,  102 => 68,  97 => 66,  84 => 55,  79 => 53,  64 => 40,  62 => 39,  28 => 8,  19 => 1,);
     }
 }
 /* ﻿<!DOCTYPE html>*/
@@ -237,8 +239,9 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /* </head>*/
 /* <body class="home">*/
 /* */
-/* <!--head-->*/
+/* <!--header-->*/
 /* {% include "common/singleHead.html" %}*/
+/* <!--headerEND-->*/
 /* */
 /* <!--所有内容-->*/
 /* <section class="row content-wrap">*/
@@ -322,6 +325,7 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /* */
 /* <!--Footer-->*/
 /* {% include "common/CommonFoot.html" %}*/
+/* <!--FooterEND-->*/
 /* */
 /* <!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->*/
 /* <script src="/app/assets/js/jquery-2.2.0.min.js"></script>*/
