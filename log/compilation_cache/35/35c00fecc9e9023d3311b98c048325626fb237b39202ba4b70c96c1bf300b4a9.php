@@ -53,9 +53,16 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
                                 </ul>
                             </li>
                             <li><a href=\"/index/about\">About</a></li>
-                            <li><a href=\"/admin/login\">Login</a></li>
-                            <li><a href=\"/admin/posting\">Posting</a></li>
-                        </ul>
+                            <li><a href=\"/index/login\">Login</a></li>
+                            ";
+        // line 39
+        if (((isset($context["userLoginState"]) ? $context["userLoginState"] : null) == 1)) {
+            // line 40
+            echo "                            <li><a href=\"/admin/posting\">Posting</a></li>
+                            ";
+        }
+        // line 42
+        echo "                        </ul>
                         <ul class=\"nav column-menu black-bg\">
                             <li><a href=\"index/single\">Blog Single 3</a></li>
 
@@ -90,9 +97,14 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
         return "common/commonhead.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 1,);
+        return array (  65 => 42,  61 => 40,  59 => 39,  19 => 1,);
     }
 }
 /* <header class="row transparent black header1" data-spy="affix" data-offset-top="0" id="header">*/
@@ -132,8 +144,10 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
 /*                                 </ul>*/
 /*                             </li>*/
 /*                             <li><a href="/index/about">About</a></li>*/
-/*                             <li><a href="/admin/login">Login</a></li>*/
+/*                             <li><a href="/index/login">Login</a></li>*/
+/*                             {% if userLoginState == 1 %}*/
 /*                             <li><a href="/admin/posting">Posting</a></li>*/
+/*                             {% endif %}*/
 /*                         </ul>*/
 /*                         <ul class="nav column-menu black-bg">*/
 /*                             <li><a href="index/single">Blog Single 3</a></li>*/

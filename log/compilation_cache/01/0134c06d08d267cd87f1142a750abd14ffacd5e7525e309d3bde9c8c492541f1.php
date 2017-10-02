@@ -122,6 +122,7 @@ class __TwigTemplate_1917d8c204384255805c5df1adfd77a2499ca0da2c58232b58fcff4d6fb
         var title = \$(\"[name=title]\").val();
         var content = editor2.txt.html();
         var author = \$(\"[name=author]\").val();
+
         var xmlhttp;
         xmlhttp=new XMLHttpRequest();
 
@@ -249,6 +250,7 @@ class __TwigTemplate_1917d8c204384255805c5df1adfd77a2499ca0da2c58232b58fcff4d6fb
 /*         var title = $("[name=title]").val();*/
 /*         var content = editor2.txt.html();*/
 /*         var author = $("[name=author]").val();*/
+/* */
 /*         var xmlhttp;*/
 /*         xmlhttp=new XMLHttpRequest();*/
 /* */

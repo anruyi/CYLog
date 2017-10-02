@@ -14,7 +14,9 @@ class CyPHP
 {
     /**
      * @var array
-     * 大概是分配的意思
+     * 默认放入前端页面的数据，所有进入前端的数据都务必放进此数组内
+     * 放入方法 assign();
+     * assign means 分配
      */
     public $assign = array();
 
@@ -25,10 +27,15 @@ class CyPHP
     public static $classMap = array();
 
     /**
-     * 启动框架调用方法
+     * 启动框架
      */
     static public function run()
     {
+        /**
+         * XXX ：默认全局打开session，不知道这样好不好
+         */
+        session_start();
+
         /**
          * 启动日志
          */
@@ -38,9 +45,12 @@ class CyPHP
          * 获取Route()的控制器名（自动追加Crtl.php）和方法
          */
         $route = new Route();
+
         $ctrlName = $route->ctrl;
         $ctrlAction = $route->action;
+
         $ctrlPath = APP.'/ctrl/'.$ctrlName.'Ctrl.php';
+
         if (is_file($ctrlPath)){
             $ctrlClass = '\app\ctrl\\'.$ctrlName.'Ctrl';
             $indexCtrl = new $ctrlClass();
@@ -74,7 +84,9 @@ class CyPHP
     /**
      * @param $name
      * @param $value
-     * 传递数据到前端界面
+     * [explain]:
+     * 方法很简单，前端能获取所有的public静态参数
+     * 通过assign()数组传递数据到前端界面
      */
     public function assign($name,$value)
     {
@@ -83,6 +95,7 @@ class CyPHP
 
     /**
      * @param $file
+     * [Twig]
      * 显示相应的view层页面
      */
     public function display($file)
@@ -90,22 +103,26 @@ class CyPHP
         $html = $file;
         $file = APP.'/views/'.$file;
         if (is_file($file)){
+
             /**
              * 使用TWIG模板引擎
              * 将页面通过TWIG模板引擎加载进页面
              */
             require_once CYPHP.'/vendor/twig/twig/lib/Twig/Autoloader.php';
+
             \Twig_Autoloader::register();
+
             $loader = new \Twig_Loader_Filesystem(APP.'/views');
             $twig = new \Twig_Environment($loader, array(
                 'cache' => CYPHP.'/log/compilation_cache',
                 'debug' => 'DEBUG'
             ));
+
             $template = $twig->loadTemplate($html);
             $template->display($this->assign?$this->assign:array());
+
         } else {
             p('is not a file',$file);
         }
-
     }
 }

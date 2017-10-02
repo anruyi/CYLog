@@ -24,6 +24,13 @@ class AdminCtrl extends CyPHP
     public function login()
     {
 
+        session_start();
+
+        /**
+         * 用户登陆状态
+         */
+        $_SESSION['userLoginState'] = false;
+
         $model = new AdminModel();
 
         $data = $model->getLogin();
@@ -38,6 +45,8 @@ class AdminCtrl extends CyPHP
             foreach ($data['username'] as $key=>$value) {
                 if ($value == $_POST['username']){
                     p("登陆成功");
+                    $_SESSION['username'] = $_POST['username'];
+                    $_SESSION['userLoginState'] = true;
                     jump('/index/index');
                 } else {
                     $this->assign('notice',"登陆失败");
@@ -45,49 +54,8 @@ class AdminCtrl extends CyPHP
             }
         }
 
-        $this->display('login.html');
+        $this->display("login.html");
     }
-
-    /**
-     * 验证
-     */
-//    public function test()
-//    {
-//        $model = new AdminModel();
-//
-//        $SQLData = $model->getLogin();
-//
-//        $data['username'] = post('username');
-//        $data['password'] = post('password');
-//
-//        /**
-//         * userLoginState 用户是否登陆
-//         */
-//        $_SESSION['userLoginState'] = false;
-//
-//        /**
-//         * 登陆状态，2为通过
-//         */
-//        $testState = 0;
-//
-//        foreach ($SQLData['username'] as $val) {
-//            if($data['username'] == $val ) {
-//                $testState = 1;
-//            }
-//        }
-//        foreach ($SQLData['password'] as $val) {
-//            if($data['password'] == $val && $testState==1) {
-//                $testState++;
-//            }
-//        }
-//        if ($testState==2) {
-//            $_SESSION['userLoginState'] = true;
-//            //jump之前不能有display()
-//            jump('/index/index');
-//        } else {
-//            jump('/Admin/login');
-//        }
-//    }
 
     /**
      * 发布文章

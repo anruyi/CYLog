@@ -53,7 +53,7 @@ class __TwigTemplate_3225fcdcc5ef51afcc89848296902311c688a7976b26d1be14cef304298
                                 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Home <span class=\"caret\"></span></a>
                                 <!--==Home下拉菜单==-->
                                 <ul class=\"dropdown-menu\">
-                                    <li><a href=\"index.html\">Home Option 1</a></li>
+                                    <li><a href=\"/index/index\">Home Option 1</a></li>
                                 </ul>
                             </li>
                             <li><a href=\"/index/about\">About</a></li>
@@ -131,7 +131,7 @@ class __TwigTemplate_3225fcdcc5ef51afcc89848296902311c688a7976b26d1be14cef304298
 /*                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>*/
 /*                                 <!--==Home下拉菜单==-->*/
 /*                                 <ul class="dropdown-menu">*/
-/*                                     <li><a href="index.html">Home Option 1</a></li>*/
+/*                                     <li><a href="/index/index">Home Option 1</a></li>*/
 /*                                 </ul>*/
 /*                             </li>*/
 /*                             <li><a href="/index/about">About</a></li>*/

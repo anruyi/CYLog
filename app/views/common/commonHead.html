@@ -35,8 +35,10 @@
                                 </ul>
                             </li>
                             <li><a href="/index/about">About</a></li>
-                            <li><a href="/admin/login">Login</a></li>
+                            <li><a href="/index/login">Login</a></li>
+                            {% if userLoginState == 1 %}
                             <li><a href="/admin/posting">Posting</a></li>
+                            {% endif %}
                         </ul>
                         <ul class="nav column-menu black-bg">
                             <li><a href="index/single">Blog Single 3</a></li>
