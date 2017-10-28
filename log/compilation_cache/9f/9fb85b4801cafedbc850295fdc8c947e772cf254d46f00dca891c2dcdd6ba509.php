@@ -94,25 +94,29 @@ class __TwigTemplate_7aee4365f87021d9e30b5f7bde71e04d1175750c911438f454dec97eba5
         var nickName = \$(\"#inputName\").val();
         var email = \$(\"#inputEmail\").val();
         var password = \$(\"#inputPassword\").val();
-        var xmlhttp;
 
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            }
-        };
+        if(!nickName||!email||!password){
+            alert(\"please int put name,email and password!\");
+        }else {
+            var xmlhttp;
 
-        xmlhttp.open(\"POST\",\"/index/register/\",true);
-        xmlhttp.setRequestHeader(\"Content-type\",\"application/x-www-form-urlencoded\");
-        xmlhttp.send(\"username=\"+nickName+\"&password=\"+password+\"&email=\"+email);
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                }
+            };
+            xmlhttp.open(\"POST\",\"/index/register/\",true);
+            xmlhttp.setRequestHeader(\"Content-type\",\"application/x-www-form-urlencoded\");
+            xmlhttp.send(\"username=\"+nickName+\"&password=\"+password+\"&email=\"+email);
+        }
     }
 );
 
 </script>
 
 ";
-        // line 84
-        $this->loadTemplate("common/commonFoot.html", "register.html", 84)->display($context);
+        // line 88
+        $this->loadTemplate("common/commonFoot.html", "register.html", 88)->display($context);
     }
 
     public function getTemplateName()
@@ -127,7 +131,7 @@ class __TwigTemplate_7aee4365f87021d9e30b5f7bde71e04d1175750c911438f454dec97eba5
 
     public function getDebugInfo()
     {
-        return array (  115 => 84,  33 => 4,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  119 => 88,  33 => 4,  31 => 3,  28 => 2,  11 => 1,);
     }
 }
 /* {% extends "layout.html" %}*/
@@ -197,17 +201,21 @@ class __TwigTemplate_7aee4365f87021d9e30b5f7bde71e04d1175750c911438f454dec97eba5
 /*         var nickName = $("#inputName").val();*/
 /*         var email = $("#inputEmail").val();*/
 /*         var password = $("#inputPassword").val();*/
-/*         var xmlhttp;*/
 /* */
-/*         xmlhttp = new XMLHttpRequest();*/
-/*         xmlhttp.onreadystatechange = function () {*/
-/*             if (xmlhttp.readyState==4 && xmlhttp.status==200) {*/
-/*             }*/
-/*         };*/
+/*         if(!nickName||!email||!password){*/
+/*             alert("please int put name,email and password!");*/
+/*         }else {*/
+/*             var xmlhttp;*/
 /* */
-/*         xmlhttp.open("POST","/index/register/",true);*/
-/*         xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");*/
-/*         xmlhttp.send("username="+nickName+"&password="+password+"&email="+email);*/
+/*             xmlhttp = new XMLHttpRequest();*/
+/*             xmlhttp.onreadystatechange = function () {*/
+/*                 if (xmlhttp.readyState==4 && xmlhttp.status==200) {*/
+/*                 }*/
+/*             };*/
+/*             xmlhttp.open("POST","/index/register/",true);*/
+/*             xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");*/
+/*             xmlhttp.send("username="+nickName+"&password="+password+"&email="+email);*/
+/*         }*/
 /*     }*/
 /* );*/
 /* */

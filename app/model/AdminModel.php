@@ -34,7 +34,7 @@ class AdminModel extends Model
      * @param string $content
      * 插入一篇文章
      */
-    public function insertOne($title,$author="",$content="",$summary)
+    public function insertOne($title,$author="",$content="", $summary="")
     {
         date_default_timezone_set('PRC');
         $this->insert($this->post,[

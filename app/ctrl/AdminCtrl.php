@@ -42,17 +42,17 @@ class AdminCtrl extends CyPHP
     {
         $model = new AdminModel();
 
-        $post['title'] = post('title','我的博客');
-        $post['author'] = post('author','作者');
-        $post['summary'] = post('summary');
-        $post['content'] = post('content');
-//        $post['labImg'] = $post('labImg');
-//        $post['userName'] = $_SESSION['userName'];
+        $title = post('title','我的博客');
+        $author = post('author','作者');
+        $summary = post('summary','这是一个摘要');
+        $content = post('content');
+//        $labImg = $post('labImg');
+//        $userName = $_SESSION['userName'];
 
-        if($post['title']=='我的博客'||$post['author']=='作者'){
+        if($title=='我的博客' && $author=='作者' && $summary=='这是一个摘要'){
 
         }else{
-            $model->insertOne($post['title'],$post['author'],$post['content'],$post['summary']);
+            $model->insertOne($title,$author,$content,$summary);
             jump("/index/index/");
         }
 

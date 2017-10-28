@@ -1,6 +1,4 @@
 <?php
-
-
 namespace app\ctrl;
 
 /**
@@ -140,14 +138,19 @@ class indexCtrl extends CyPHP
     {
         $model = new UserModel();
 
-        $username = post('username','NULL');
+        $username = post('username');
 
-        $password = post('password','NULL');
+        $password = post('password');
 
-        if($username=='NULL' || $password=='NULL'){
+        $email = post('email');
+
+        $avatar = post('avatar');
+
+        if($username==null || $password==null || $password==null){
 
         }else{
-            $model->addOneUser($username,'',$password);
+            $model->addOneUser($username,$email,$password);
+            jump("/index/index");
         }
 
         $this->display("register.html");
@@ -156,7 +159,7 @@ class indexCtrl extends CyPHP
     /**==================easy part=========================**/
 
     /**
-     * 关于页面显示
+     * 关于页面
      */
     public function about()
     {

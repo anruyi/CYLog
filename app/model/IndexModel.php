@@ -79,6 +79,4 @@ class IndexModel extends Model
             );
         return $data;
     }
-
-
 }

@@ -39,7 +39,7 @@ function p($var2, $var1='')
  * @param bool $fitt 验证规则
  * @return bool
  */
-function post($name, $default=false, $fitt=false)
+function post($name, $default=null, $fitt=false)
 {
     if (isset($_POST[$name])) {
         if ($fitt) {
@@ -52,7 +52,10 @@ function post($name, $default=false, $fitt=false)
                     break;
                     default:;
             }
-        }
+        } elseif ($_POST[$name]!=null){
+            return $_POST[$name];
+        } else
+            return $default;
     } else {
         return $default;
     }

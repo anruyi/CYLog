@@ -65,17 +65,21 @@ $("#btn-submit").click(
         var nickName = $("#inputName").val();
         var email = $("#inputEmail").val();
         var password = $("#inputPassword").val();
-        var xmlhttp;
 
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            }
-        };
+        if(!nickName||!email||!password){
+            alert("please int put name,email and password!");
+        }else {
+            var xmlhttp;
 
-        xmlhttp.open("POST","/index/register/",true);
-        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xmlhttp.send("username="+nickName+"&password="+password+"&email="+email);
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                }
+            };
+            xmlhttp.open("POST","/index/register/",true);
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.send("username="+nickName+"&password="+password+"&email="+email);
+        }
     }
 );
 
