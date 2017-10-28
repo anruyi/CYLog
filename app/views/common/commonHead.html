@@ -35,9 +35,14 @@
                                 </ul>
                             </li>
                             <li><a href="/index/about">About</a></li>
+
+                            {% if userLoginState == 0 %}
                             <li><a href="/index/login">Login</a></li>
+                            {% endif %}
+
                             {% if userLoginState == 1 %}
                             <li><a href="/admin/posting">Posting</a></li>
+                            <li><a href="/admin/logout">logout</a></li>
                             {% endif %}
                         </ul>
                         <ul class="nav column-menu black-bg">

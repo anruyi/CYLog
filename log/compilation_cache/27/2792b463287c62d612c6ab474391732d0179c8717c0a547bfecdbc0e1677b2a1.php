@@ -57,9 +57,26 @@ class __TwigTemplate_3225fcdcc5ef51afcc89848296902311c688a7976b26d1be14cef304298
                                 </ul>
                             </li>
                             <li><a href=\"/index/about\">About</a></li>
-                            <li><a href=\"/admin/login\">Login</a></li>
-                            <li><a href=\"/admin/posting\">Posting</a></li>
-                        </ul>
+
+                            ";
+        // line 40
+        if (((isset($context["userLoginState"]) ? $context["userLoginState"] : null) == 0)) {
+            // line 41
+            echo "                            <li><a href=\"/index/login\">Login</a></li>
+                            ";
+        }
+        // line 43
+        echo "
+                            ";
+        // line 44
+        if (((isset($context["userLoginState"]) ? $context["userLoginState"] : null) == 1)) {
+            // line 45
+            echo "                            <li><a href=\"/admin/posting\">Posting</a></li>
+                            <li><a href=\"/admin/logout\">logout</a></li>
+                            ";
+        }
+        // line 48
+        echo "                        </ul>
                         <ul class=\"nav column-menu white-bg\">
                             <li><a href=\"index/single\">Blog Single 3</a></li>
 
@@ -94,7 +111,7 @@ class __TwigTemplate_3225fcdcc5ef51afcc89848296902311c688a7976b26d1be14cef304298
 
     public function getDebugInfo()
     {
-        return array (  34 => 14,  19 => 1,);
+        return array (  79 => 48,  74 => 45,  72 => 44,  69 => 43,  65 => 41,  63 => 40,  34 => 14,  19 => 1,);
     }
 }
 /* <header class="row transparent white" data-spy="affix" data-offset-top="300" id="header">*/
@@ -135,8 +152,15 @@ class __TwigTemplate_3225fcdcc5ef51afcc89848296902311c688a7976b26d1be14cef304298
 /*                                 </ul>*/
 /*                             </li>*/
 /*                             <li><a href="/index/about">About</a></li>*/
-/*                             <li><a href="/admin/login">Login</a></li>*/
+/* */
+/*                             {% if userLoginState == 0 %}*/
+/*                             <li><a href="/index/login">Login</a></li>*/
+/*                             {% endif %}*/
+/* */
+/*                             {% if userLoginState == 1 %}*/
 /*                             <li><a href="/admin/posting">Posting</a></li>*/
+/*                             <li><a href="/admin/logout">logout</a></li>*/
+/*                             {% endif %}*/
 /*                         </ul>*/
 /*                         <ul class="nav column-menu white-bg">*/
 /*                             <li><a href="index/single">Blog Single 3</a></li>*/

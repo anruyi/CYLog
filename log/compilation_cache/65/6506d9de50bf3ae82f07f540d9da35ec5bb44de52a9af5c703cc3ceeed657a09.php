@@ -7,60 +7,33 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
     {
         parent::__construct($env);
 
-        $this->parent = false;
-
+        // line 1
+        $this->parent = $this->loadTemplate("layout.html", "single.html", 1);
         $this->blocks = array(
+            'content' => array($this, 'block_content'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "layout.html";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
-        echo "﻿<!DOCTYPE html>
-<html lang=\"zh-cn\">
-<head>
-<meta charset=\"utf-8\">
-<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-<!--========== The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags ==========-->
-<title>";
-        // line 8
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), 0, array(), "array"), "title", array()), "html", null, true);
-        echo "</title>
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
 
-<!--==========Dependency============-->
-<link rel=\"stylesheet\" href=\"/app/assets/css/bootstrap.min.css\">
-<link rel=\"stylesheet\" href=\"/app/assets/assets/css/font-awesome.min.css\">
-<link rel=\"stylesheet\" href=\"/app/assets/assets/vendors/owl-carousel/assets/owl.carousel.css\">
-<link rel=\"stylesheet\" href=\"/app/assets/assets/vendors/magnific-popup/magnific-popup.css\">
-<link rel=\"stylesheet\" href=\"/app/assets/assets/vendors/flexslider/flexslider.css\">
-
-<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Kanit:500\">
-<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Josefin+Sans:600,700italic\">
-<link href='https://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,800,700' rel='stylesheet' type='text/css'>
-<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic\">
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500italic,500,700italic,700,900,900italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
-
-<!--==========Theme Styles==========-->
-<link href=\"/app/assets/css/style.css\" rel=\"stylesheet\">
-<link href=\"/app/assets/css/theme/green.css\" rel=\"stylesheet\">
-
-<!--========== HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries ==========-->
-<!--========== WARNING: Respond.js doesn't work if you view the page via file:// ==========-->
-<!--==========[if lt IE 9]>
-    <script src=\"/app/assets/js/html5shiv.min.js\"></script>
-    <script src=\"/app/assets/js/respond.min.js\"></script>
-<![endif]==========-->
-</head>
-<body class=\"home\">
-
+    // line 2
+    public function block_content($context, array $blocks = array())
+    {
+        // line 3
+        echo "
 <!--header-->
 ";
-        // line 39
-        $this->loadTemplate("common/singleHead.html", "single.html", 39)->display($context);
-        // line 40
+        // line 5
+        $this->loadTemplate("common/singleHead.html", "single.html", 5)->display($context);
+        // line 6
         echo "<!--headerEND-->
 
 <!--所有内容-->
@@ -71,16 +44,16 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                 <!--文章块开始-->
                 <article class=\"single-post-content row m0 post\">
                     <!--文章标题-->
-                    <header class=\"row\">                        
+                    <header class=\"row\">
                         <h5 class=\"post-meta\">
                             <a href=\"#\" class=\"date\">feb 17, 2016</a>
                             <span class=\"post-author\"><i>by</i><a href=\"#\">";
-        // line 53
+        // line 19
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), 0, array(), "array"), "author", array()), "html", null, true);
         echo "</a></span>
                         </h5>
                         <h2 class=\"post-title\">";
-        // line 55
+        // line 21
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), 0, array(), "array"), "title", array()), "html", null, true);
         echo "</h2>
                         <div class=\"row\">
@@ -93,15 +66,15 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                     <!--文章内容-->
                     <div class=\"post-content\">
                         ";
-        // line 66
+        // line 32
         echo "                        ";
         echo $this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), 0, array(), "array"), "content", array());
         echo "
                         ";
-        // line 68
+        // line 34
         echo "                    </div>
 
-                        <!--文章内容END-->
+                    <!--文章内容END-->
 
                     <!--文章标签-->
                     <div class=\"row m0 tags\">
@@ -128,33 +101,33 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 
                     <!--文章评论-->
                     ";
-        // line 96
-        $this->loadTemplate("plug/commont.html", "single.html", 96)->display($context);
-        // line 97
+        // line 62
+        $this->loadTemplate("plug/commont.html", "single.html", 62)->display($context);
+        // line 63
         echo "
                 </article>
                 <!--文章块END-->
             </div>
 
             <!--侧边栏Plug-->
-            <div class=\"col-md-4 sidebar\">               
+            <div class=\"col-md-4 sidebar\">
                 <!--Author Widget-->
                 ";
-        // line 105
-        $this->loadTemplate("plug/author.html", "single.html", 105)->display($context);
-        // line 106
+        // line 71
+        $this->loadTemplate("plug/author.html", "single.html", 71)->display($context);
+        // line 72
         echo "
                 <!--Twitter Widget-->
                 ";
-        // line 108
-        $this->loadTemplate("plug/twitter.html", "single.html", 108)->display($context);
-        // line 109
+        // line 74
+        $this->loadTemplate("plug/twitter.html", "single.html", 74)->display($context);
+        // line 75
         echo "
                 <!--Instagram Widget-->
                 ";
-        // line 111
-        $this->loadTemplate("plug/instagram.html", "single.html", 111)->display($context);
-        // line 112
+        // line 77
+        $this->loadTemplate("plug/instagram.html", "single.html", 77)->display($context);
+        // line 78
         echo "
             </div>
             <!--侧边栏END-->
@@ -164,26 +137,14 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 <!--所有内容END-->
 
 
-
 <!--Footer-->
 ";
-        // line 123
-        $this->loadTemplate("common/CommonFoot.html", "single.html", 123)->display($context);
-        // line 124
+        // line 88
+        $this->loadTemplate("common/CommonFoot.html", "single.html", 88)->display($context);
+        // line 89
         echo "<!--FooterEND-->
 
-<!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->
-<script src=\"/app/assets/js/jquery-2.2.0.min.js\"></script>
-<script src=\"/app/assets/js/bootstrap.min.js\"></script>
-<script src=\"/app/assets/vendors/owl-carousel/owl.carousel.min.js\"></script>
-<script src=\"/app/assets/vendors/magnific-popup/jquery.magnific-popup.min.js\"></script>
-<script src=\"/app/assets/vendors/instafeed/instafeed.min.js\"></script>
-<script src=\"/app/assets/vendors/imagesLoaded/imagesloaded.pkgd.min.js\"></script>
-<script src=\"/app/assets/vendors/isotope/isotope.pkgd.min.js\"></script>
-<script src=\"/app/assets/vendors/flexslider/jquery.flexslider-min.js\"></script>
-<script src=\"/app/assets/js/theme.js\"></script>
-</body>
-</html>
+
 ";
     }
 
@@ -199,45 +160,11 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 
     public function getDebugInfo()
     {
-        return array (  173 => 124,  171 => 123,  158 => 112,  156 => 111,  152 => 109,  150 => 108,  146 => 106,  144 => 105,  134 => 97,  132 => 96,  102 => 68,  97 => 66,  84 => 55,  79 => 53,  64 => 40,  62 => 39,  28 => 8,  19 => 1,);
+        return array (  145 => 89,  143 => 88,  131 => 78,  129 => 77,  125 => 75,  123 => 74,  119 => 72,  117 => 71,  107 => 63,  105 => 62,  75 => 34,  70 => 32,  57 => 21,  52 => 19,  37 => 6,  35 => 5,  31 => 3,  28 => 2,  11 => 1,);
     }
 }
-/* ﻿<!DOCTYPE html>*/
-/* <html lang="zh-cn">*/
-/* <head>*/
-/* <meta charset="utf-8">*/
-/* <meta http-equiv="X-UA-Compatible" content="IE=edge">*/
-/* <meta name="viewport" content="width=device-width, initial-scale=1">*/
-/* <!--========== The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags ==========-->*/
-/* <title>{{data[0].title}}</title>*/
-/* */
-/* <!--==========Dependency============-->*/
-/* <link rel="stylesheet" href="/app/assets/css/bootstrap.min.css">*/
-/* <link rel="stylesheet" href="/app/assets/assets/css/font-awesome.min.css">*/
-/* <link rel="stylesheet" href="/app/assets/assets/vendors/owl-carousel/assets/owl.carousel.css">*/
-/* <link rel="stylesheet" href="/app/assets/assets/vendors/magnific-popup/magnific-popup.css">*/
-/* <link rel="stylesheet" href="/app/assets/assets/vendors/flexslider/flexslider.css">*/
-/* */
-/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:500">*/
-/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:600,700italic">*/
-/* <link href='https://fonts.googleapis.com/css?family=Dosis:400,200,300,500,600,800,700' rel='stylesheet' type='text/css'>*/
-/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic">*/
-/* <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500italic,500,700italic,700,900,900italic' rel='stylesheet' type='text/css'>*/
-/* <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>*/
-/* <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>*/
-/* */
-/* <!--==========Theme Styles==========-->*/
-/* <link href="/app/assets/css/style.css" rel="stylesheet">*/
-/* <link href="/app/assets/css/theme/green.css" rel="stylesheet">*/
-/* */
-/* <!--========== HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries ==========-->*/
-/* <!--========== WARNING: Respond.js doesn't work if you view the page via file:// ==========-->*/
-/* <!--==========[if lt IE 9]>*/
-/*     <script src="/app/assets/js/html5shiv.min.js"></script>*/
-/*     <script src="/app/assets/js/respond.min.js"></script>*/
-/* <![endif]==========-->*/
-/* </head>*/
-/* <body class="home">*/
+/* {% extends "layout.html" %}*/
+/* {% block content %}*/
 /* */
 /* <!--header-->*/
 /* {% include "common/singleHead.html" %}*/
@@ -251,7 +178,7 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*                 <!--文章块开始-->*/
 /*                 <article class="single-post-content row m0 post">*/
 /*                     <!--文章标题-->*/
-/*                     <header class="row">                        */
+/*                     <header class="row">*/
 /*                         <h5 class="post-meta">*/
 /*                             <a href="#" class="date">feb 17, 2016</a>*/
 /*                             <span class="post-author"><i>by</i><a href="#">{{data[0].author}}</a></span>*/
@@ -271,7 +198,7 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*                         {% endautoescape %}*/
 /*                     </div>*/
 /* */
-/*                         <!--文章内容END-->*/
+/*                     <!--文章内容END-->*/
 /* */
 /*                     <!--文章标签-->*/
 /*                     <div class="row m0 tags">*/
@@ -304,7 +231,7 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*             </div>*/
 /* */
 /*             <!--侧边栏Plug-->*/
-/*             <div class="col-md-4 sidebar">               */
+/*             <div class="col-md-4 sidebar">*/
 /*                 <!--Author Widget-->*/
 /*                 {% include "plug/author.html" %}*/
 /* */
@@ -322,21 +249,10 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /* <!--所有内容END-->*/
 /* */
 /* */
-/* */
 /* <!--Footer-->*/
 /* {% include "common/CommonFoot.html" %}*/
 /* <!--FooterEND-->*/
 /* */
-/* <!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->*/
-/* <script src="/app/assets/js/jquery-2.2.0.min.js"></script>*/
-/* <script src="/app/assets/js/bootstrap.min.js"></script>*/
-/* <script src="/app/assets/vendors/owl-carousel/owl.carousel.min.js"></script>*/
-/* <script src="/app/assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>*/
-/* <script src="/app/assets/vendors/instafeed/instafeed.min.js"></script>*/
-/* <script src="/app/assets/vendors/imagesLoaded/imagesloaded.pkgd.min.js"></script>*/
-/* <script src="/app/assets/vendors/isotope/isotope.pkgd.min.js"></script>*/
-/* <script src="/app/assets/vendors/flexslider/jquery.flexslider-min.js"></script>*/
-/* <script src="/app/assets/js/theme.js"></script>*/
-/* </body>*/
-/* </html>*/
+/* */
+/* {% endblock %}*/
 /* */

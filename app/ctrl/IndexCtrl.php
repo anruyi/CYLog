@@ -8,17 +8,21 @@ namespace app\ctrl;
  */
 use app\model\AdminModel;
 use app\model\IndexModel;
+use app\model\UserModel;
 use core\CyPHP;
+use core\lib\Log;
 
 /**
  * Class indexCtrl
  * @package app\ctrl
- * 目前只有两个功能
- * 一、[post cover page]获取所有post的封面并以瀑布流的形式展现 index
- * 二、[detail single page]获取指定页面数据 single
- * 三、[about page]跳转关于页面
- * 四、[login part]登陆功能实现
- * 五、[register part]注册页面实现
+ * [主界面]
+ * 获取所有post的封面并以瀑布流的形式展现 index()
+ * [主功能]
+ * 一、获取指定页面数据 single()
+ * 二、登陆功能实现 login()
+ * 三、注册页面实现 register()
+ * [副界面]
+ * 一、关于页面 about()
  */
 class indexCtrl extends CyPHP
 {
@@ -81,14 +85,11 @@ class indexCtrl extends CyPHP
     {
         session_start();
 
-        $_SESSION['userLoginState'] = 0;
-
         $model = new AdminModel();
 
         $data = $model->getLogin();
 
         if(isset($_POST['username']) && $_SESSION['userLoginState']==0) {
-
             /**
              * 循环获取数据库中username值
              * 和post数据进行比较
@@ -100,17 +101,25 @@ class indexCtrl extends CyPHP
 
                     $_SESSION['userLoginState'] = 1;
 
+                    $this->assign('notice',"成功");
+
                     jump('/index/index');
 
                 } else {
+                    $_SESSION['userLoginState'] = 0;
+
                     $this->assign('notice',"登陆失败");
                 }
             }
-
-        } else {
+        } else if ($_SESSION['userLoginState']==1){
             $_SESSION['userLoginState'] = 1;
-            $this->assign('notice',"您已成功登陆");
+            $this->assign('notice',请勿重复登陆);
+        } else {
+            $_SESSION['userLoginState'] = 0;
+            $this->assign('notice',"您尚未登陆");
         }
+
+        Log::log('login people is:'.$_POST['username'],'login.log');
 
         /**
          * 导入
@@ -129,7 +138,19 @@ class indexCtrl extends CyPHP
      */
     public function register()
     {
+        $model = new UserModel();
 
+        $username = post('username','NULL');
+
+        $password = post('password','NULL');
+
+        if($username=='NULL' || $password=='NULL'){
+
+        }else{
+            $model->addOneUser($username,'',$password);
+        }
+
+        $this->display("register.html");
     }
 
     /**==================easy part=========================**/

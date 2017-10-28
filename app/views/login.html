@@ -24,7 +24,7 @@
             </div>
             <div class="loginBoxButtons">
                 <button class="loginBtn" id="submitBut">登录</button>
-                <div> 新用户注册</div>
+                <div><a href="/index/register">新用户注册</a></div>
             </div>
         </div>
     </form>
@@ -35,7 +35,6 @@
             var username = $("#username").val();
             var password = $("#password").val();
             var content = "c";
-            var post = "{{notice}}";
 
             var xmlhttp;
             xmlhttp = new XMLHttpRequest();

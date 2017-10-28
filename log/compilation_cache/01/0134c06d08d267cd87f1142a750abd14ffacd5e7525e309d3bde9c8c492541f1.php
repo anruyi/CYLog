@@ -122,20 +122,25 @@ class __TwigTemplate_1917d8c204384255805c5df1adfd77a2499ca0da2c58232b58fcff4d6fb
         var title = \$(\"[name=title]\").val();
         var content = editor2.txt.html();
         var author = \$(\"[name=author]\").val();
+        var summary = \$(\"[name=summary]\").val()
 
-        var xmlhttp;
-        xmlhttp=new XMLHttpRequest();
+        if(!title&&!summary&&!author) {
+            alert(\"please input somethings in you post then click submit!\");
+        }else{
+            var xmlhttp;
+            xmlhttp=new XMLHttpRequest();
 
-        xmlhttp.onreadystatechange=function()
-        {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            xmlhttp.onreadystatechange=function()
             {
-                document.getElementById(\"title\").innerHTML=xmlhttp.responseText;
-            }
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById(\"title\").innerHTML=xmlhttp.responseText;
+                }
+            };
+            xmlhttp.open(\"POST\",\"/admin/posting/\",true);
+            xmlhttp.setRequestHeader(\"Content-type\",\"application/x-www-form-urlencoded\");
+            xmlhttp.send(\"title=\"+title+\"&author=\"+author+\"&content=\"+content+\"&summary=\"+summary);
         }
-        xmlhttp.open(\"POST\",\"/admin/posting/\",true);
-        xmlhttp.setRequestHeader(\"Content-type\",\"application/x-www-form-urlencoded\");
-        xmlhttp.send(\"title=\"+title+\"&author=\"+author+\"&content=\"+content);
     }
 </script>
 
@@ -250,20 +255,25 @@ class __TwigTemplate_1917d8c204384255805c5df1adfd77a2499ca0da2c58232b58fcff4d6fb
 /*         var title = $("[name=title]").val();*/
 /*         var content = editor2.txt.html();*/
 /*         var author = $("[name=author]").val();*/
+/*         var summary = $("[name=summary]").val()*/
 /* */
-/*         var xmlhttp;*/
-/*         xmlhttp=new XMLHttpRequest();*/
+/*         if(!title&&!summary&&!author) {*/
+/*             alert("please input somethings in you post then click submit!");*/
+/*         }else{*/
+/*             var xmlhttp;*/
+/*             xmlhttp=new XMLHttpRequest();*/
 /* */
-/*         xmlhttp.onreadystatechange=function()*/
-/*         {*/
-/*             if (xmlhttp.readyState==4 && xmlhttp.status==200)*/
+/*             xmlhttp.onreadystatechange=function()*/
 /*             {*/
-/*                 document.getElementById("title").innerHTML=xmlhttp.responseText;*/
-/*             }*/
+/*                 if (xmlhttp.readyState==4 && xmlhttp.status==200)*/
+/*                 {*/
+/*                     document.getElementById("title").innerHTML=xmlhttp.responseText;*/
+/*                 }*/
+/*             };*/
+/*             xmlhttp.open("POST","/admin/posting/",true);*/
+/*             xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");*/
+/*             xmlhttp.send("title="+title+"&author="+author+"&content="+content+"&summary="+summary);*/
 /*         }*/
-/*         xmlhttp.open("POST","/admin/posting/",true);*/
-/*         xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");*/
-/*         xmlhttp.send("title="+title+"&author="+author+"&content="+content);*/
 /*     }*/
 /* </script>*/
 /* */

@@ -9,19 +9,18 @@ use core\CyPHP;
 /**
  * Class AdminCtrl
  * @package app\ctrl
- * 管理员控制器，主要功能如下
- * 一、管理员登陆并验证 login
- * 二、管理员发布文章 posting
+ * 管理员控制器
+ * 一、退出 logout()
+ * 二、发布文章 posting()
  */
 class AdminCtrl extends CyPHP
 {
-
     public $isLogin = false;
 
     /**
-     * 登陆验证功能实现
+     * 退出登陆
      */
-    public function login()
+    public function logout()
     {
 
         session_start();
@@ -29,32 +28,11 @@ class AdminCtrl extends CyPHP
         /**
          * 用户登陆状态
          */
-        $_SESSION['userLoginState'] = false;
-
-        $model = new AdminModel();
-
-        $data = $model->getLogin();
-
-        $this->assign('data',$data);
-
-        if(isset($_POST['username'])) {
-            /**
-             * 循环获取数据库中username值
-             * 和post数据进行比较
-             */
-            foreach ($data['username'] as $key=>$value) {
-                if ($value == $_POST['username']){
-                    p("登陆成功");
-                    $_SESSION['username'] = $_POST['username'];
-                    $_SESSION['userLoginState'] = true;
-                    jump('/index/index');
-                } else {
-                    $this->assign('notice',"登陆失败");
-                }
-            }
+        if($_SESSION['userLoginState']==1) {
+            $_SESSION['userLoginState'] = 0;
+            $this->assign('userLoginState',0);
         }
-
-        $this->display("login.html");
+        jump("/index/index");
     }
 
     /**
@@ -63,14 +41,21 @@ class AdminCtrl extends CyPHP
     public function posting()
     {
         $model = new AdminModel();
-        $post['title'] = post('title','NULL');
+
+        $post['title'] = post('title','我的博客');
+        $post['author'] = post('author','作者');
+        $post['summary'] = post('summary');
         $post['content'] = post('content');
-        $post['author'] = post('author','NULL');
-        if($post['title']=="NULL"&&$post['author']='NULL'){
+//        $post['labImg'] = $post('labImg');
+//        $post['userName'] = $_SESSION['userName'];
+
+        if($post['title']=='我的博客'||$post['author']=='作者'){
 
         }else{
-            $model->insertOne($post['title'],$post['author'],$post['content']);
+            $model->insertOne($post['title'],$post['author'],$post['content'],$post['summary']);
+            jump("/index/index/");
         }
+
         $this->display('postEditor.html');
     }
 

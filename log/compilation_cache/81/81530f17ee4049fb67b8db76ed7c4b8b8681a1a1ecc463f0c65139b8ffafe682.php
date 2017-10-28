@@ -56,7 +56,7 @@ class __TwigTemplate_0b20cdbcc888cb0ed5a8c3dfdd677a9cec1b344aeab9da1f2a523a73db2
             </div>
             <div class=\"loginBoxButtons\">
                 <button class=\"loginBtn\" id=\"submitBut\">登录</button>
-                <div> 新用户注册</div>
+                <div><a href=\"/index/register\">新用户注册</a></div>
             </div>
         </div>
     </form>
@@ -67,10 +67,6 @@ class __TwigTemplate_0b20cdbcc888cb0ed5a8c3dfdd677a9cec1b344aeab9da1f2a523a73db2
             var username = \$(\"#username\").val();
             var password = \$(\"#password\").val();
             var content = \"c\";
-            var post = \"";
-        // line 38
-        echo twig_escape_filter($this->env, (isset($context["notice"]) ? $context["notice"] : null), "html", null, true);
-        echo "\";
 
             var xmlhttp;
             xmlhttp = new XMLHttpRequest();
@@ -90,9 +86,9 @@ class __TwigTemplate_0b20cdbcc888cb0ed5a8c3dfdd677a9cec1b344aeab9da1f2a523a73db2
 
 <!--=========尾巴========-->
 ";
+        // line 56
+        $this->loadTemplate("common/commonFoot.html", "login.html", 56)->display($context);
         // line 57
-        $this->loadTemplate("common/commonFoot.html", "login.html", 57)->display($context);
-        // line 58
         echo "
 ";
     }
@@ -109,7 +105,7 @@ class __TwigTemplate_0b20cdbcc888cb0ed5a8c3dfdd677a9cec1b344aeab9da1f2a523a73db2
 
     public function getDebugInfo()
     {
-        return array (  96 => 58,  94 => 57,  72 => 38,  46 => 15,  33 => 4,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  92 => 57,  90 => 56,  46 => 15,  33 => 4,  31 => 3,  28 => 2,  11 => 1,);
     }
 }
 /* {% extends "layout.html" %}*/
@@ -138,7 +134,7 @@ class __TwigTemplate_0b20cdbcc888cb0ed5a8c3dfdd677a9cec1b344aeab9da1f2a523a73db2
 /*             </div>*/
 /*             <div class="loginBoxButtons">*/
 /*                 <button class="loginBtn" id="submitBut">登录</button>*/
-/*                 <div> 新用户注册</div>*/
+/*                 <div><a href="/index/register">新用户注册</a></div>*/
 /*             </div>*/
 /*         </div>*/
 /*     </form>*/
@@ -149,7 +145,6 @@ class __TwigTemplate_0b20cdbcc888cb0ed5a8c3dfdd677a9cec1b344aeab9da1f2a523a73db2
 /*             var username = $("#username").val();*/
 /*             var password = $("#password").val();*/
 /*             var content = "c";*/
-/*             var post = "{{notice}}";*/
 /* */
 /*             var xmlhttp;*/
 /*             xmlhttp = new XMLHttpRequest();*/

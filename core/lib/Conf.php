@@ -25,7 +25,7 @@ class Conf
     static public function get($name,$file)
     {
         /**
-         * 判断文件是否存在
+         * 拼接插件文件路径，从这里获取需要的参数
          */
         $path = CYPHP.'/core/config/'.$file.'.php';
 

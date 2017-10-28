@@ -53,15 +53,25 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
                                 </ul>
                             </li>
                             <li><a href=\"/index/about\">About</a></li>
-                            <li><a href=\"/index/login\">Login</a></li>
+
                             ";
         // line 39
-        if (((isset($context["userLoginState"]) ? $context["userLoginState"] : null) == 1)) {
+        if (((isset($context["userLoginState"]) ? $context["userLoginState"] : null) == 0)) {
             // line 40
-            echo "                            <li><a href=\"/admin/posting\">Posting</a></li>
+            echo "                            <li><a href=\"/index/login\">Login</a></li>
                             ";
         }
         // line 42
+        echo "
+                            ";
+        // line 43
+        if (((isset($context["userLoginState"]) ? $context["userLoginState"] : null) == 1)) {
+            // line 44
+            echo "                            <li><a href=\"/admin/posting\">Posting</a></li>
+                            <li><a href=\"/admin/logout\">logout</a></li>
+                            ";
+        }
+        // line 47
         echo "                        </ul>
                         <ul class=\"nav column-menu black-bg\">
                             <li><a href=\"index/single\">Blog Single 3</a></li>
@@ -104,7 +114,7 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
 
     public function getDebugInfo()
     {
-        return array (  65 => 42,  61 => 40,  59 => 39,  19 => 1,);
+        return array (  75 => 47,  70 => 44,  68 => 43,  65 => 42,  61 => 40,  59 => 39,  19 => 1,);
     }
 }
 /* <header class="row transparent black header1" data-spy="affix" data-offset-top="0" id="header">*/
@@ -144,9 +154,14 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
 /*                                 </ul>*/
 /*                             </li>*/
 /*                             <li><a href="/index/about">About</a></li>*/
+/* */
+/*                             {% if userLoginState == 0 %}*/
 /*                             <li><a href="/index/login">Login</a></li>*/
+/*                             {% endif %}*/
+/* */
 /*                             {% if userLoginState == 1 %}*/
 /*                             <li><a href="/admin/posting">Posting</a></li>*/
+/*                             <li><a href="/admin/logout">logout</a></li>*/
 /*                             {% endif %}*/
 /*                         </ul>*/
 /*                         <ul class="nav column-menu black-bg">*/

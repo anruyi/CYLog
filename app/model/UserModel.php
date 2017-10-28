@@ -6,9 +6,9 @@ namespace app\model;
  */
 use core\lib\Model;
 
-class AdminModel extends Model
+class UserModel extends Model
 {
-    public $table = 'admin';
+    public $table = 'user';
     public $post = 'posts';
     /**
      * 所有数据
@@ -28,20 +28,29 @@ class AdminModel extends Model
         return $data;
     }
 
+    public function addOneUser($name,$email="",$password="")
+    {
+        $this->insert($this->table,[
+            'username' => $name,
+            'email' => $email,
+            'password' => $password,
+//            'created_at' => date("Y-m-d H:i:s",time()),
+        ]);
+    }
+
     /**
      * @param $title
      * @param string $author
      * @param string $content
-     * 插入一篇文章
+     * 插入一片文章
      */
-    public function insertOne($title,$author="",$content="",$summary)
+    public function insertOne($title,$author="",$content="")
     {
         date_default_timezone_set('PRC');
         $this->insert($this->post,[
             'title' => $title,
             'author' => $author,
             'content' => $content,
-            'summary' => $summary,
             'created_at' => date("Y-m-d H:i:s",time()),
         ]);
     }

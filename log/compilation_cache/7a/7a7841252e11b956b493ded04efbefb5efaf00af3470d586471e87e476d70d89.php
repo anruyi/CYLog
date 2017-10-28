@@ -17,10 +17,7 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<!--------------------------->
-<!--本页面并不使用，但是留作蓝本-->
-<!--------------------------->
-<html lang=\"zh-cn\">
+        echo "<html lang=\"zh-cn\">
 <head>
     <meta charset=\"utf-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
@@ -56,9 +53,9 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 
 <div>
 ";
-        // line 39
+        // line 36
         $this->displayBlock('content', $context, $blocks);
-        // line 42
+        // line 39
         echo "</div>
 
 <!--========== jQuery (necessary for Bootstrap's JavaScript plugins) ==========-->
@@ -75,10 +72,10 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 ";
     }
 
-    // line 39
+    // line 36
     public function block_content($context, array $blocks = array())
     {
-        // line 40
+        // line 37
         echo "
 ";
     }
@@ -90,12 +87,9 @@ class __TwigTemplate_66f982e17ea4a7edc1e032a658c555ba431adeb361a30e74108d1a107ac
 
     public function getDebugInfo()
     {
-        return array (  82 => 40,  79 => 39,  62 => 42,  60 => 39,  20 => 1,);
+        return array (  79 => 37,  76 => 36,  59 => 39,  57 => 36,  20 => 1,);
     }
 }
-/* <!--------------------------->*/
-/* <!--本页面并不使用，但是留作蓝本-->*/
-/* <!--------------------------->*/
 /* <html lang="zh-cn">*/
 /* <head>*/
 /*     <meta charset="utf-8">*/

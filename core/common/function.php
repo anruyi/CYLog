@@ -52,8 +52,6 @@ function post($name, $default=false, $fitt=false)
                     break;
                     default:;
             }
-        } else {
-            return $_POST[$name];
         }
     } else {
         return $default;
