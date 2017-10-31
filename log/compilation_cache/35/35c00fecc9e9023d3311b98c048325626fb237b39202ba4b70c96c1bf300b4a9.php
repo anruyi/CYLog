@@ -16,7 +16,8 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<header class=\"row transparent black header1\" data-spy=\"affix\" data-offset-top=\"0\" id=\"header\">
+        echo "<!--主界面头部-->
+<header class=\"row transparent black header1\" data-spy=\"affix\" data-offset-top=\"0\" id=\"header\">
     <div class=\"container\">
         <div class=\"row top-header\">
             <div class=\"col-sm-4 search-form-col\">
@@ -49,10 +50,9 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
                             <li class=\"active dropdown\">
                                 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Home <span class=\"caret\"></span></a>
                                 <ul class=\"dropdown-menu\">
-                                    <li><a href=\"index/index\">Home Option 1</a></li>
+                                    <li><a href=\"index/index\">Home Option one</a></li>
                                 </ul>
                             </li>
-                            <li><a href=\"/index/about\">About</a></li>
 
                             ";
         // line 39
@@ -72,11 +72,13 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
                             ";
         }
         // line 47
-        echo "                        </ul>
+        echo "
+                            <li><a href=\"/index/about\">About</a></li>
+                        </ul>
                         <ul class=\"nav column-menu black-bg\">
-                            <li><a href=\"index/single\">Blog Single 3</a></li>
+                            <li><a href=\"index/single\">other link one</a></li>
 
-                            <li><a href=\"index/contact\">contact</a></li>
+                            <li><a href=\"index/contact\">other link two</a></li>
                         </ul>
                     </div>
                 </div>
@@ -86,7 +88,9 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
                         <div class=\"form-group\">
                             <input type=\"email\" class=\"form-control\" placeholder=\"Email\">
                         </div>
-                        <button type=\"submit\" class=\"btn btn-primary btn-sm\"><span>send</span></button>
+                        <button type=\"submit\" class=\"btn btn-primary btn-sm\">
+                            <span>send</span>
+                        </button>
                     </form>
                     <ul class=\"nav social-nav dark\">
                         <li><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>
@@ -117,6 +121,7 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
         return array (  75 => 47,  70 => 44,  68 => 43,  65 => 42,  61 => 40,  59 => 39,  19 => 1,);
     }
 }
+/* <!--主界面头部-->*/
 /* <header class="row transparent black header1" data-spy="affix" data-offset-top="0" id="header">*/
 /*     <div class="container">*/
 /*         <div class="row top-header">*/
@@ -150,10 +155,9 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
 /*                             <li class="active dropdown">*/
 /*                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>*/
 /*                                 <ul class="dropdown-menu">*/
-/*                                     <li><a href="index/index">Home Option 1</a></li>*/
+/*                                     <li><a href="index/index">Home Option one</a></li>*/
 /*                                 </ul>*/
 /*                             </li>*/
-/*                             <li><a href="/index/about">About</a></li>*/
 /* */
 /*                             {% if userLoginState == 0 %}*/
 /*                             <li><a href="/index/login">Login</a></li>*/
@@ -163,11 +167,13 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
 /*                             <li><a href="/admin/posting">Posting</a></li>*/
 /*                             <li><a href="/admin/logout">logout</a></li>*/
 /*                             {% endif %}*/
+/* */
+/*                             <li><a href="/index/about">About</a></li>*/
 /*                         </ul>*/
 /*                         <ul class="nav column-menu black-bg">*/
-/*                             <li><a href="index/single">Blog Single 3</a></li>*/
+/*                             <li><a href="index/single">other link one</a></li>*/
 /* */
-/*                             <li><a href="index/contact">contact</a></li>*/
+/*                             <li><a href="index/contact">other link two</a></li>*/
 /*                         </ul>*/
 /*                     </div>*/
 /*                 </div>*/
@@ -177,7 +183,9 @@ class __TwigTemplate_18c3f5e5c43d3547d9553e4255dcb94d66338ba17be628b8ab43f045f8e
 /*                         <div class="form-group">*/
 /*                             <input type="email" class="form-control" placeholder="Email">*/
 /*                         </div>*/
-/*                         <button type="submit" class="btn btn-primary btn-sm"><span>send</span></button>*/
+/*                         <button type="submit" class="btn btn-primary btn-sm">*/
+/*                             <span>send</span>*/
+/*                         </button>*/
 /*                     </form>*/
 /*                     <ul class="nav social-nav dark">*/
 /*                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>*/

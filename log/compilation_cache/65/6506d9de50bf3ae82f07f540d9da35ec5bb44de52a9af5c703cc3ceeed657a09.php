@@ -88,12 +88,12 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
                     <ul class=\"pager\">
                         <li>
                             <h4>Previous Articles</h4>
-                            <h2 class=\"post-title\"><a href=\"single2.html\">Nature, in the broadest sense, is the natural...</a></h2>
+                            <h2 class=\"post-title\"><a href=\"/index/single/\">Nature, in the broadest sense, is the natural...</a></h2>
                             <h5 class=\"taxonomy pull-left\"><i>in</i> <a href=\"#\">image</a>, <a href=\"#\">entertainment</a></h5>
                         </li>
                         <li>
                             <h4>Next Articles</h4>
-                            <h2 class=\"post-title\"><a href=\"single2.html\">Nature, in the broadest sense, is the natural...</a></h2>
+                            <h2 class=\"post-title\"><a href=\"/index/single/\">Nature, in the broadest sense, is the natural...</a></h2>
                             <h5 class=\"taxonomy pull-left\"><i>in</i> <a href=\"#\">image</a>, <a href=\"#\">entertainment</a></h5>
                         </li>
                     </ul>
@@ -212,12 +212,12 @@ class __TwigTemplate_a4338515db3f9494c6b46b63d351fbf9bdf5e7d205c73aff6b73983918d
 /*                     <ul class="pager">*/
 /*                         <li>*/
 /*                             <h4>Previous Articles</h4>*/
-/*                             <h2 class="post-title"><a href="single2.html">Nature, in the broadest sense, is the natural...</a></h2>*/
+/*                             <h2 class="post-title"><a href="/index/single/">Nature, in the broadest sense, is the natural...</a></h2>*/
 /*                             <h5 class="taxonomy pull-left"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>*/
 /*                         </li>*/
 /*                         <li>*/
 /*                             <h4>Next Articles</h4>*/
-/*                             <h2 class="post-title"><a href="single2.html">Nature, in the broadest sense, is the natural...</a></h2>*/
+/*                             <h2 class="post-title"><a href="/index/single/">Nature, in the broadest sense, is the natural...</a></h2>*/
 /*                             <h5 class="taxonomy pull-left"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>*/
 /*                         </li>*/
 /*                     </ul>*/

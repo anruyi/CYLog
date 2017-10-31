@@ -56,29 +56,29 @@ class __TwigTemplate_3225fcdcc5ef51afcc89848296902311c688a7976b26d1be14cef304298
                                     <li><a href=\"/index/index\">Home Option 1</a></li>
                                 </ul>
                             </li>
-                            <li><a href=\"/index/about\">About</a></li>
-
                             ";
-        // line 40
+        // line 38
         if (((isset($context["userLoginState"]) ? $context["userLoginState"] : null) == 0)) {
-            // line 41
+            // line 39
             echo "                            <li><a href=\"/index/login\">Login</a></li>
                             ";
         }
-        // line 43
+        // line 41
         echo "
                             ";
-        // line 44
+        // line 42
         if (((isset($context["userLoginState"]) ? $context["userLoginState"] : null) == 1)) {
-            // line 45
+            // line 43
             echo "                            <li><a href=\"/admin/posting\">Posting</a></li>
                             <li><a href=\"/admin/logout\">logout</a></li>
                             ";
         }
-        // line 48
-        echo "                        </ul>
+        // line 46
+        echo "
+                            <li><a href=\"/index/about\">About</a></li>
+                        </ul>
                         <ul class=\"nav column-menu white-bg\">
-                            <li><a href=\"index/single\">Blog Single 3</a></li>
+                            <li><a href=\"index/single\">other link one</a></li>
 
                             <li><a href=\"index/contact\">contact</a></li>
                         </ul>
@@ -111,7 +111,7 @@ class __TwigTemplate_3225fcdcc5ef51afcc89848296902311c688a7976b26d1be14cef304298
 
     public function getDebugInfo()
     {
-        return array (  79 => 48,  74 => 45,  72 => 44,  69 => 43,  65 => 41,  63 => 40,  34 => 14,  19 => 1,);
+        return array (  77 => 46,  72 => 43,  70 => 42,  67 => 41,  63 => 39,  61 => 38,  34 => 14,  19 => 1,);
     }
 }
 /* <header class="row transparent white" data-spy="affix" data-offset-top="300" id="header">*/
@@ -151,8 +151,6 @@ class __TwigTemplate_3225fcdcc5ef51afcc89848296902311c688a7976b26d1be14cef304298
 /*                                     <li><a href="/index/index">Home Option 1</a></li>*/
 /*                                 </ul>*/
 /*                             </li>*/
-/*                             <li><a href="/index/about">About</a></li>*/
-/* */
 /*                             {% if userLoginState == 0 %}*/
 /*                             <li><a href="/index/login">Login</a></li>*/
 /*                             {% endif %}*/
@@ -161,9 +159,11 @@ class __TwigTemplate_3225fcdcc5ef51afcc89848296902311c688a7976b26d1be14cef304298
 /*                             <li><a href="/admin/posting">Posting</a></li>*/
 /*                             <li><a href="/admin/logout">logout</a></li>*/
 /*                             {% endif %}*/
+/* */
+/*                             <li><a href="/index/about">About</a></li>*/
 /*                         </ul>*/
 /*                         <ul class="nav column-menu white-bg">*/
-/*                             <li><a href="index/single">Blog Single 3</a></li>*/
+/*                             <li><a href="index/single">other link one</a></li>*/
 /* */
 /*                             <li><a href="index/contact">contact</a></li>*/
 /*                         </ul>*/

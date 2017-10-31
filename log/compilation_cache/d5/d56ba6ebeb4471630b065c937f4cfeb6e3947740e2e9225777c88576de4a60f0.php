@@ -27,14 +27,22 @@ class __TwigTemplate_cec2cce2378710f22190e8564df0fae7f326d1029643be70aa294f951e2
                     <ul class=\"nav column-menu white-bg\">
                         <li class=\"active\"><a href=\"/index/index\">Home</a></li>
                         <li><a href=\"/index/about\">About</a></li>
-                        <li><a href=\"/admin/posting\">posting</a></li>
-                        <li><a href=\"single2.html\">Blog Single 2</a></li>
-                        <li><a href=\"single2.html\">Blog Single 2</a></li>
+
+                        ";
+        // line 13
+        if (((isset($context["userLoginState"]) ? $context["userLoginState"] : null) == 1)) {
+            // line 14
+            echo "                        <li><a href=\"/admin/posting\">Posting</a></li>
+                        <li><a href=\"/admin/logout\">logout</a></li>
+                        ";
+        }
+        // line 17
+        echo "
                     </ul>
                     <ul class=\"nav column-menu white-bg\">
-                        <li><a href=\"single3.html\">Blog Single 3</a></li>
+                        <li><a href=\"single3.html\">anther list one</a></li>
 
-                        <li><a href=\"contact.html\">contact</a></li>
+                        <li><a href=\"contact.html\">anther list two</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,9 +65,14 @@ class __TwigTemplate_cec2cce2378710f22190e8564df0fae7f326d1029643be70aa294f951e2
         return "common/commonFoot.html";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  19 => 1,);
+        return array (  40 => 17,  35 => 14,  33 => 13,  19 => 1,);
     }
 }
 /* <footer class="row" id="footer">*/
@@ -73,14 +86,17 @@ class __TwigTemplate_cec2cce2378710f22190e8564df0fae7f326d1029643be70aa294f951e2
 /*                     <ul class="nav column-menu white-bg">*/
 /*                         <li class="active"><a href="/index/index">Home</a></li>*/
 /*                         <li><a href="/index/about">About</a></li>*/
-/*                         <li><a href="/admin/posting">posting</a></li>*/
-/*                         <li><a href="single2.html">Blog Single 2</a></li>*/
-/*                         <li><a href="single2.html">Blog Single 2</a></li>*/
+/* */
+/*                         {% if userLoginState == 1 %}*/
+/*                         <li><a href="/admin/posting">Posting</a></li>*/
+/*                         <li><a href="/admin/logout">logout</a></li>*/
+/*                         {% endif %}*/
+/* */
 /*                     </ul>*/
 /*                     <ul class="nav column-menu white-bg">*/
-/*                         <li><a href="single3.html">Blog Single 3</a></li>*/
+/*                         <li><a href="single3.html">anther list one</a></li>*/
 /* */
-/*                         <li><a href="contact.html">contact</a></li>*/
+/*                         <li><a href="contact.html">anther list two</a></li>*/
 /*                     </ul>*/
 /*                 </div>*/
 /*             </div>*/
