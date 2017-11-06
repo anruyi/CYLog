@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: chenyi
- * Date: 17-8-21
- * Time: 19:22
+ * Author: CYLeft
  */
 namespace core\lib;
 
@@ -33,6 +30,7 @@ class Conf
             return self::$conf[$file][$name];
         } else{
             if (is_file($path)){
+                //include能返回包含文件的返回值,此处返回值是一个索引数组
                 $conf = include $path;
                 if (isset($conf[$name])){
                     self::$conf['$file'] = $conf;
