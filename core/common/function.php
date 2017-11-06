@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: chenyi
- * Date: 17-8-18
- * Time: 14:26
+ * User: CYLeft
+ * 我脑残的给这个文件加了命名空间,后来才发现,都没有类体,还加什么命名空间,真是愚蠢.
  */
 
 /**
@@ -69,4 +67,31 @@ function jump($url)
 {
     header("Location:".$url);
     exit;
+}
+
+/**
+ * @return array|false|string
+ * 获取ip
+ */
+function getIP() {
+    if (getenv('HTTP_CLIENT_IP')) {
+        $ip = getenv('HTTP_CLIENT_IP');
+    }
+    elseif (getenv('HTTP_X_FORWARDED_FOR')) {
+        $ip = getenv('HTTP_X_FORWARDED_FOR');
+    }
+    elseif (getenv('HTTP_X_FORWARDED')) {
+        $ip = getenv('HTTP_X_FORWARDED');
+    }
+    elseif (getenv('HTTP_FORWARDED_FOR')) {
+        $ip = getenv('HTTP_FORWARDED_FOR');
+
+    }
+    elseif (getenv('HTTP_FORWARDED')) {
+        $ip = getenv('HTTP_FORWARDED');
+    }
+    else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
 }
