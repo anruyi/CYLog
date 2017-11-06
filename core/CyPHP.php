@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * 本框架核心文件
+ * [解释:]
+ * 一 解析路由
+ */
 namespace core;
 
 use core\lib\Log;
@@ -37,12 +41,14 @@ class CyPHP
         session_start();
 
         /**
-         * 启动日志
+         * 启动日志,暂时没有写任何日志.
+         * [注]此处无需include主要得益于自动加载类
          */
         Log::init();
 
         /**
          * 获取Route()的控制器名（自动追加Crtl.php）和方法
+         * [注]此处无需include主要得益于自动加载类
          */
         $route = new Route();
 
@@ -55,12 +61,12 @@ class CyPHP
             $ctrlClass = '\app\ctrl\\'.$ctrlName.'Ctrl';
             $indexCtrl = new $ctrlClass();
             $indexCtrl->$ctrlAction();
-            Log::log('ctrl:'.$ctrlName.'    '.'action:'.$ctrlAction);
+            Log::log('ctrl:'.$ctrlName.','.'action:'.$ctrlAction.','.'IP:'.getIP(),viewPages);
         }else {
             throw new \Exception('找不到控制器'.$ctrlPath);
         }
 
-        p($_SESSION);
+        p($_SESSION,'session');
         p(self::$classMap);
 
     }
@@ -72,10 +78,13 @@ class CyPHP
      */
     static public function load($class)
     {
+        /**
+         * 自动读取文件的命名空间,并导入
+         */
         if (isset($classMap[$class])) {
             return true;
         } else {
-            $path = CYPHP .'/' .$class . '.php';
+            $path = CYPHP.'/'.$class.'.php';
             if (is_file($path)) {
                 include $path;
                 self::$classMap[$class] = $path;
@@ -126,7 +135,7 @@ class CyPHP
             $template->display($this->assign?$this->assign:array());
 
         } else {
-            p('is not a file',$file);
+            p('This is not a file',$file);
         }
     }
 }
