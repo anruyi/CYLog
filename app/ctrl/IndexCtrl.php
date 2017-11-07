@@ -21,6 +21,8 @@ use core\lib\Log;
  * 三、注册页面实现 register()
  * [副界面]
  * 一、关于页面 about()
+ * [其他注意事项]
+ * session已经开启
  */
 class indexCtrl extends CyPHP
 {
@@ -29,24 +31,18 @@ class indexCtrl extends CyPHP
      */
     public function index()
     {
-        /**
-         * 入口文件已开启session功能
-         */
-
         $model = new IndexModel();
         $data = $model->getPostCover();
 
         /**
-         * 导入：
          * data（封面数据）导入前端页面
-         * 用户登陆信息、
+         * 用户登陆信息:1.登陆状态 2.登陆名
          */
         $this->assign('data',$data);
         $this->assign('userLoginState',$_SESSION['userLoginState']);
+        $this->assign('notice',$_SESSION['username']);
 
-        /**
-         * 显示Log主界面
-         */
+
         $this->display('index.html');
     }
 
@@ -56,22 +52,25 @@ class indexCtrl extends CyPHP
     public function single()
     {
         $model = new IndexModel();
+        $nextID = $model->getNextPostID($_GET['id']);
+        $prevID = $model->getPrevPostID($_GET['id']);
 
         $data = $model->getPostOne($_GET['id']);
-
+        $nextData = $model->getPostOne($nextID);
+        $prevData = $model->getPostOne($prevID);
         /**
-         * 导入
-         * Post表单数据库信息、
-         * 路由页面id、
-         * 登陆状态
+         * 1. Post表单数据库信息
+         * 2. 路由页面id
+         * 3. 登陆状态
          */
+        $this->assign('nextData',$nextData);
+        $this->assign('prevData',$prevData);
         $this->assign('data',$data);
         $this->assign('id', $_GET['id']);
+        $this->assign('nextID',$nextID[0]);
+        $this->assign('prevID',$prevID[0]);
         $this->assign('userLoginState',$_SESSION['userLoginState']);
 
-        /**
-         * 显示Log完整内容的单页面
-         */
         $this->display('single.html');
     }
 
@@ -81,16 +80,15 @@ class indexCtrl extends CyPHP
      */
     public function login()
     {
-        session_start();
-
         $model = new AdminModel();
-
         $data = $model->getLogin();
 
         if(isset($_POST['username']) && $_SESSION['userLoginState']==0) {
             /**
-             * 循环获取数据库中username值
-             * 和post数据进行比较
+             * 循环获取数据库中username值和post数据进行比较
+             * 1. 设置session username名称
+             * 2. 设置session userLoginState状态
+             * 3. 返回前台数据 notice
              */
             foreach ($data['username'] as $key=>$value) {
                 if ($value == $_POST['username']){
@@ -99,7 +97,7 @@ class indexCtrl extends CyPHP
 
                     $_SESSION['userLoginState'] = 1;
 
-                    $this->assign('notice',"成功");
+                    $this->assign('notice',$_SESSION['username']);
 
                     jump('/index/index');
 
@@ -117,17 +115,13 @@ class indexCtrl extends CyPHP
             $this->assign('notice',"您尚未登陆");
         }
 
-        Log::log('login people is:'.$_POST['username'],'login.log');
+        Log::log('login people is:'.$_SESSION['username'],'login.log');
 
         /**
-         * 导入
-         * 用户登陆信息、
+         * 用户登陆信息
          */
         $this->assign('userLoginState',$_SESSION['userLoginState']);
 
-        /**
-         * 显示Log主界面
-         */
         $this->display("login.html");
     }
 
@@ -163,6 +157,17 @@ class indexCtrl extends CyPHP
      */
     public function about()
     {
+        /**
+         * 导入：
+         * data（封面数据）导入前端页面
+         * 用户登陆信息
+         */
+        $this->assign('userLoginState',$_SESSION['userLoginState']);
+        $this->assign('notice',$_SESSION['username']);
+
+        /**
+         * 显示about用户页面
+         */
         $this->display('about.html');
     }
 
