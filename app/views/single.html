@@ -38,22 +38,38 @@
                     <!--文章标签-->
                     <div class="row m0 tags">
                         <a href="#" class="tag">music</a>
-                        <a href="#" class="tag">tegs</a>
-                        <a href="#" class="tag">tegs hover</a>
+                        <a href="#" class="tag">tags</a>
+                        <a href="#" class="tag">tags hover</a>
                     </div>
                     <!--文章标签END-->
 
                     <!--文章翻页-->
                     <ul class="pager">
                         <li>
-                            <h4>Previous {{data[0].title}}</h4>
-                            <h2 class="post-title"><a href="/index/single/">Nature, in the broadest sense, is the natural...</a></h2>
-                            <h5 class="taxonomy pull-left"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
+                            <h4>{{prevData[0].title}}</h4>
+                            <h2 class="post-title">
+                                <a href="/index/single/id/{{prevID}}">
+                                {{prevData[0].summary|slice(0,20)}}
+                                </a>
+                            </h2>
+                            <h5 class="taxonomy pull-left">
+                                <i>in</i>
+                                <a href="#">image</a>,
+                                <a href="#">entertainment</a>
+                            </h5>
                         </li>
                         <li>
-                            <h4>Next Articles</h4>
-                            <h2 class="post-title"><a href="/index/single/">Nature, in the broadest sense, is the natural...</a></h2>
-                            <h5 class="taxonomy pull-left"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>
+                            <h4>{{nextData[0].title}}</h4>
+                            <h2 class="post-title">
+                                <a href="/index/single/id/{{nextID}}">
+                                    {{nextData[0].summary|slice(0,20)}}
+                                </a>
+                            </h2>
+                            <h5 class="taxonomy pull-left">
+                                <i>in</i>
+                                <a href="#">image</a>,
+                                <a href="#">entertainment</a>
+                            </h5>
                         </li>
                     </ul>
                     <!--文章翻页END-->

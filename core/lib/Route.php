@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: chenyi
+ * User: CYLeft
  * Date: 17-8-18
- * Time: 16:13
  */
 namespace core\lib;
 

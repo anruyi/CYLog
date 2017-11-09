@@ -121,7 +121,7 @@ class CyPHP
              * 使用TWIG模板引擎
              * 将页面通过TWIG模板引擎加载进页面
              */
-            require_once CYPHP.'/vendor/twig/twig/lib/Twig/Autoloader.php';
+//            require_once CYPHP.'/vendor/twig/twig/lib/Twig/Autoloader.php';
 
             \Twig_Autoloader::register();
 

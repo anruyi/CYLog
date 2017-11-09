@@ -43,13 +43,15 @@
                             {% if userLoginState == 1 %}
                             <li><a href="/admin/posting">Posting</a></li>
                             <li><a href="/admin/logout">logout</a></li>
+                            <li><a href="/index/about">[{{notice}}]</a></li>
                             {% endif %}
 
+                            {% if userLoginState == 0 %}
                             <li><a href="/index/about">About</a></li>
+                            {% endif %}
                         </ul>
                         <ul class="nav column-menu black-bg">
                             <li><a href="index/single">other link one</a></li>
-
                             <li><a href="index/contact">other link two</a></li>
                         </ul>
                     </div>
