@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: chenyi
- * Date: 17-8-20
- * Time: 14:07
- */
+
 namespace core\lib;
 
 use Medoo\Medoo;
@@ -12,7 +7,7 @@ use Medoo\Medoo;
 /**
  * Class Model
  * @package core\lib
- * 模型层，不知道那个界面的模型层
+ * 模型层,给Medoo加上一层包装,方便格式化调用
  */
 class Model extends Medoo
 {

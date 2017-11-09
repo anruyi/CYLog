@@ -28,6 +28,12 @@ class File
         $this->path = $conf['PATH'];
     }
 
+    /**
+     * @param $message
+     * @param $file
+     * @return bool|int
+     * 编写博客
+     */
     public function log($message,$file)
     {
         if (!is_dir($this->path.date('YmdH'))) { //判断是否存在日志路径，不存在就新建路径

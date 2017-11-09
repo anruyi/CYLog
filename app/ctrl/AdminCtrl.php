@@ -46,13 +46,14 @@ class AdminCtrl extends CyPHP
         $author = post('author','作者');
         $summary = post('summary','这是一个摘要');
         $content = post('content');
+        $type = post('type');
 //        $labImg = $post('labImg');
 //        $userName = $_SESSION['userName'];
 
         if($title=='我的博客' && $author=='作者' && $summary=='这是一个摘要'){
-
+            $this->assign('notice','nothing');
         }else{
-            $model->insertOne($title,$author,$content,$summary);
+            $model->insertOne($title,$author,$content,$summary,$type);
             jump("/index/index/");
         }
 

@@ -70,6 +70,7 @@ class IndexModel extends Model
                     "title",
                     'author',
                     'content',
+                    'summary',
                     'created_at',
                     'updated_at',
                 ],
@@ -78,5 +79,44 @@ class IndexModel extends Model
                 ]
             );
         return $data;
+    }
+
+    /**
+     * @param $id
+     * @return array|bool
+     * 翻页,后一条
+     */
+    public function getNextPostID($id)
+    {
+        /**
+         * 如果有上一条数据，则返回数据
+         * 如果没有,则返回当前id
+         */
+        $idd = $this->select($this->table,'id',[
+            "id[>]" => $id,
+        ]);
+        if($idd==null) $idd[0] = $id;
+        return $idd;
+    }
+
+    /**
+     * @param $id
+     * @return array|bool
+     * 翻页,前一条
+     * FIXME: 这里的返回值是有问题的
+     */
+    public function getPrevPostID($id)
+    {
+        /**
+         * 如果有上一条数据，则返回数据
+         * 如果没有,则返回当前id
+         */
+        $idd = $this->select($this->table,'id',[
+            "id[<]" => $id,
+        ]);
+        if($idd!=null)
+            return $idd;
+        else
+            return $id;
     }
 }
