@@ -95,6 +95,7 @@ class IndexModel extends Model
         $idd = $this->select($this->table,'id',[
             "id[>]" => $id,
         ]);
+
         if($idd==null) $idd[0] = $id;
         return $idd;
     }
