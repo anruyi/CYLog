@@ -5,6 +5,7 @@ use app\model\AdminModel;
 
 use app\model\IndexModel;
 use core\CyPHP;
+use core\lib\Log;
 
 /**
  * Class AdminCtrl
@@ -22,7 +23,6 @@ class AdminCtrl extends CyPHP
      */
     public function logout()
     {
-
         session_start();
 
         /**
@@ -48,13 +48,21 @@ class AdminCtrl extends CyPHP
         $content = post('content');
         $type = post('type');
 //        $labImg = $post('labImg');
-//        $userName = $_SESSION['userName'];
+        $username = $_SESSION['username'];
 
         if($title=='我的博客' && $author=='作者' && $summary=='这是一个摘要'){
+
             $this->assign('notice','nothing');
+
         }else{
-            $model->insertOne($title,$author,$content,$summary,$type);
-            jump("/index/index/");
+
+            $this->assign('notice','nothing');
+
+            $model->insertOne($title,$author,$username,$content,$summary,$type);
+
+            Log::log('New Post name :'.$title.',editor is :'.$_SESSION['username'],'posting.log');
+
+            jump("/index/index");
         }
 
         $this->display('postEditor.html');
