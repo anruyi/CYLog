@@ -67,8 +67,8 @@ class indexCtrl extends CyPHP
         $this->assign('prevData',$prevData);
         $this->assign('data',$data);
         $this->assign('id', $_GET['id']);
-        $this->assign('nextID',end($nextID));
-        $this->assign('prevID',is_null($prevID[0])?$_GET['id']:$prevID[0]);
+        $this->assign('nextID',$nextID[0]);
+        $this->assign('prevID',is_null($prevID)?$_GET['id']:end($prevID));
         $this->assign('username',$_SESSION['username']);
         $this->assign('userLoginState',$_SESSION['userLoginState']);
 
