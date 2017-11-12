@@ -40,7 +40,7 @@ class indexCtrl extends CyPHP
          */
         $this->assign('data',$data);
         $this->assign('userLoginState',$_SESSION['userLoginState']);
-        $this->assign('notice',$_SESSION['username']);
+        $this->assign('username',$_SESSION['username']);
 
 
         $this->display('index.html');
@@ -67,8 +67,9 @@ class indexCtrl extends CyPHP
         $this->assign('prevData',$prevData);
         $this->assign('data',$data);
         $this->assign('id', $_GET['id']);
-        $this->assign('nextID',$nextID[0]);
-        $this->assign('prevID',$prevID[0]);
+        $this->assign('nextID',end($nextID));
+        $this->assign('prevID',is_null($prevID[0])?$_GET['id']:$prevID[0]);
+        $this->assign('username',$_SESSION['username']);
         $this->assign('userLoginState',$_SESSION['userLoginState']);
 
         $this->display('single.html');
