@@ -7,13 +7,13 @@
 <!--↑包含单页面专属头部-->
 <link rel="stylesheet" href="/app/assets/css/login.css">
 <div class="wrapper">
-    <form id="myForm" action="" class="myForm" method="post" >
+    <form id="myForm" action="" class="myForm" method="post" oninput="loadXMLDoc()">
 
         <div class="loginBox">
             <div class="loginBoxCenter">
                 <!--UserName-->
-                <p><label for="username">用户名：{{notice}}</label></p>
-                <p><input type="text" id="username" name="username" class="loginInput" autofocus="autofocus" required="required" autocomplete="off" placeholder="请输入邮箱/手机号"/></p>
+                <p><label for="username" id="usernameLabel">用户名：</label></p>
+                <p><input type="text" id="username" name="username" class="loginInput" autofocus="autofocus" required="required" autocomplete="off" placeholder="请输入邮箱/手机号" /></p>
                 <!--PassWord-->
                 <p><label for="password">密码：</label></p>
                 <p><input type="password" id="password" name="password" class="loginInput" required="required" placeholder="请输入密码" /></p>
@@ -29,6 +29,7 @@
         </div>
     </form>
 </div>
+<script src="/app/assets/js/jquery-2.2.0.min.js"></script>
 <script>
     $("#submitBut").click(
         function(){
@@ -41,14 +42,31 @@
             xmlhttp.onreadystatechange = function() {
                 if (xmlhttp.readyState==4 && xmlhttp.status==200)
                 {
-                    $("[for=username]").innerText="aaa";
+                    document.getElementById(usernameLabel).innerText = "a";
                 }
             };
-            xmlhttp.open("POST","/admin/login/",true);
+            xmlhttp.open("POST","/index/login/",true);
             xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
             xmlhttp.send("username="+username+"&password="+password+"&content="+content);
         }
     );
+    function loadXMLDoc()
+    {
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var content = "c";
+
+        var xmlhttp;
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("usernameLabel").innerText = "{{notice}}";
+            }
+        }
+        xmlhttp.open("POST","/index/login/",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("username="+username+"&password="+password+"&content="+content);
+    }
 
 </script>
 
