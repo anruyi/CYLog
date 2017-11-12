@@ -49,7 +49,7 @@
                             <h4>{{prevData[0].title}}</h4>
                             <h2 class="post-title">
                                 <a href="/index/single/id/{{prevID}}">
-                                {{prevData[0].summary|slice(0,20)}}
+                                    {{prevID}}{{prevData[0].summary|slice(0,20)}}
                                 </a>
                             </h2>
                             <h5 class="taxonomy pull-left">
@@ -62,7 +62,7 @@
                             <h4>{{nextData[0].title}}</h4>
                             <h2 class="post-title">
                                 <a href="/index/single/id/{{nextID}}">
-                                    {{nextData[0].summary|slice(0,20)}}
+                                    {{nextID}}{{nextData[0].summary|slice(0,20)}}
                                 </a>
                             </h2>
                             <h5 class="taxonomy pull-left">
