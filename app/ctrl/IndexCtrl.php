@@ -57,11 +57,11 @@ class indexCtrl extends CyPHP
 
         //上下页面
         $nextID = $model->getNextPostID($_GET['id'])[0];
-        $prevID = is_null($model->getPrevPostID($_GET['id']))?$_GET['id']:end($model->getPrevPostID($_GET['id']));
-
+        $prevID = empty(
+            $model->getPrevPostID($_GET['id'])
+        )?$_GET['id']:end($model->getPrevPostID($_GET['id']));
         //本页面数据,上下页面数据
         $data = $this->_parseDown($model->getPostOne($_GET['id']));
-        p($data);
         $nextData = $model->getPostOne($nextID);
         $prevData = $model->getPostOne($prevID);
 
@@ -86,29 +86,32 @@ class indexCtrl extends CyPHP
     {
         $model = new AdminModel();
         $data = $model->getLogin();
+        p($data);
 
-        if(isset($_POST['username']) && $_SESSION['userLoginState']==0) {
+        $username = post('username');
+        $password = post('password','null');
+
+        if($_SESSION['userLoginState']==0) {
             /**
              * 循环获取数据库中username值和post数据进行比较
              * 1. 设置session username名称
              * 2. 设置session userLoginState状态
              * 3. 返回前台数据 notice
              */
-            foreach ($data['username'] as $key=>$value) {
-                if ($value == $_POST['username']){
+            foreach ($data as $key=>$value) {
+                if ($value['username'] == $username){
+                    if ($value['password'] == $password) {
 
-                    $_SESSION['username'] = $_POST['username'];
+                        $_SESSION['username'] = $username;
 
-                    $_SESSION['userLoginState'] = 1;
+                        $_SESSION['userLoginState'] = 1;
 
-                    $this->assign('notice',$_SESSION['username']);
+                        $this->assign('notice',$_SESSION['username']);
 
-                    jump('/index/index');
-
+                        jump('/index/index');
+                    }
                 } else {
-                    $_SESSION['userLoginState'] = 0;
-
-                    $this->assign('notice',"登陆失败");
+                    continue;
                 }
             }
         } else if ($_SESSION['userLoginState']==1){
@@ -125,6 +128,7 @@ class indexCtrl extends CyPHP
          * 用户登陆信息
          */
         $this->assign('userLoginState',$_SESSION['userLoginState']);
+        $this->assign('username',$_SESSION['username']);
 
         $this->display("login.html");
     }
@@ -178,6 +182,7 @@ class indexCtrl extends CyPHP
     /**
      * @param $array
      * @return string
+     * 生成解析好的文件
      */
     private function _parseDown($array)
     {
