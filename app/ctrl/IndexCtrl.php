@@ -9,6 +9,7 @@ use app\model\IndexModel;
 use app\model\UserModel;
 use core\CyPHP;
 use core\lib\Log;
+use core\lib\ParseDown;
 
 /**
  * Class indexCtrl
@@ -47,28 +48,30 @@ class indexCtrl extends CyPHP
     }
 
     /**
-     * 显示指定页面
+     * 一 渲染普通页面
+     * 二 渲染MarkDown文件
      */
     public function single()
     {
         $model = new IndexModel();
-        $nextID = $model->getNextPostID($_GET['id']);
-        $prevID = $model->getPrevPostID($_GET['id']);
 
-        $data = $model->getPostOne($_GET['id']);
+        //上下页面
+        $nextID = $model->getNextPostID($_GET['id'])[0];
+        $prevID = is_null($model->getPrevPostID($_GET['id']))?$_GET['id']:end($model->getPrevPostID($_GET['id']));
+
+        //本页面数据,上下页面数据
+        $data = $this->_parseDown($model->getPostOne($_GET['id']));
+        p($data);
         $nextData = $model->getPostOne($nextID);
         $prevData = $model->getPostOne($prevID);
-        /**
-         * 1. Post表单数据库信息
-         * 2. 路由页面id
-         * 3. 登陆状态
-         */
+
+        //上下页面数据,本页面数据,路由id,上下页id,用户,登陆状态.
         $this->assign('nextData',$nextData);
         $this->assign('prevData',$prevData);
         $this->assign('data',$data);
         $this->assign('id', $_GET['id']);
-        $this->assign('nextID',$nextID[0]);
-        $this->assign('prevID',is_null($prevID)?$_GET['id']:end($prevID));
+        $this->assign('nextID',$nextID);
+        $this->assign('prevID',$prevID);
         $this->assign('username',$_SESSION['username']);
         $this->assign('userLoginState',$_SESSION['userLoginState']);
 
@@ -170,6 +173,22 @@ class indexCtrl extends CyPHP
          * 显示about用户页面
          */
         $this->display('about.html');
+    }
+
+    /**
+     * @param $array
+     * @return string
+     */
+    private function _parseDown($array)
+    {
+        if ($array[0]['type']==1) {
+           $parse = new ParseDown();
+           $data = $parse->text($array[0]['content']);
+           return $data;
+        } else {
+            return $array[0]['content'];
+        }
+
     }
 
 
