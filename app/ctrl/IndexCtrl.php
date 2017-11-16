@@ -43,11 +43,11 @@ class indexCtrl extends CyPHP
         $this->assign('userLoginState',$_SESSION['userLoginState']);
         $this->assign('username',$_SESSION['username']);
 
-
         $this->display('index.html');
     }
 
     /**
+     * [页面渲染]
      * 一 渲染普通页面
      * 二 渲染MarkDown文件
      */
@@ -60,8 +60,11 @@ class indexCtrl extends CyPHP
         $prevID = empty(
             $model->getPrevPostID($_GET['id'])
         )?$_GET['id']:end($model->getPrevPostID($_GET['id']));
-        //本页面数据,上下页面数据
+
+        //本页面数据,md检验并解析
         $data = $this->_parseDown($model->getPostOne($_GET['id']));
+
+        //上下页面预览数据
         $nextData = $model->getPostOne($nextID);
         $prevData = $model->getPostOne($prevID);
 
@@ -151,7 +154,7 @@ class indexCtrl extends CyPHP
 
         $email = post('email');
 
-        $avatar = post('avatar');
+        //$avatar = post('avatar');
 
         if($username==null || $password==null || $password==null){
 
