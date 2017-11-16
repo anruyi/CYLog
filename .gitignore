@@ -1,3 +1,4 @@
-cylog.xxx.com/.idea/
-cylog.xxx.com/log/
-
+log/
+.idea/
+/log/
+/.idea/
