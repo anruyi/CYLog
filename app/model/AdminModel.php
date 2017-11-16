@@ -21,10 +21,12 @@ class AdminModel extends Model
 
     public function getLogin()
     {
-        $data['username'] = $this->select($this->table,'username');
-        $data['password'] = $this->select($this->table,'password');
-        $data['email'] = $this->select($this->table,'email');
-        $data['avatar'] = $this->select($this->table,'avatar');
+        $data = $this->select($this->table,[
+            'username',
+            'password',
+            'email',
+            'avatar'
+        ]);
         return $data;
     }
 
@@ -34,12 +36,13 @@ class AdminModel extends Model
      * @param string $content
      * 插入一篇文章
      */
-    public function insertOne($title,$author="",$content="", $summary="",$type='0')
+    public function insertOne($title,$author="",$editor="",$content="", $summary="",$type='0')
     {
         date_default_timezone_set('PRC');
         $this->insert($this->post,[
             'title' => $title,
             'author' => $author,
+            'user_name' => $editor,
             'content' => $content,
             'summary' => $summary,
             'type' => $type,

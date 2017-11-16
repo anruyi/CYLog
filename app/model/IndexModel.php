@@ -59,7 +59,7 @@ class IndexModel extends Model
 
     /**
      * @return array
-     * 获得一篇文章
+     * 取出文章内容
      */
     public function getPostOne($id)
     {
@@ -71,8 +71,10 @@ class IndexModel extends Model
                     'author',
                     'content',
                     'summary',
+                    'user_id',
                     'created_at',
                     'updated_at',
+                    'type',
                 ],
                 [
                     "id[=]" => $id,
@@ -115,9 +117,6 @@ class IndexModel extends Model
         $idd = $this->select($this->table,'id',[
             "id[<]" => $id,
         ]);
-        if($idd!=null)
-            return $idd;
-        else
-            return $id;
+        return $idd;
     }
 }

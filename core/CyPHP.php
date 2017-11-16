@@ -66,8 +66,8 @@ class CyPHP
             throw new \Exception('找不到控制器'.$ctrlPath);
         }
 
-        p($_SESSION,'session');
-        p(self::$classMap);
+//        p($_SESSION,'session');
+//        p(self::$classMap);
 
     }
 

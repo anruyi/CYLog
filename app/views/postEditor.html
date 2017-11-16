@@ -2,7 +2,7 @@
 {% block content %}
 <title>a</title>
 {% include "common/singleHead.html" %}
-<form action=""></form>
+<form action="/index/index/"></form>
     <div class="container">
         <!--标题表单组-->
         <div class="form-group">
@@ -78,6 +78,7 @@
 
     </div>
 </form>
+<!--<script type="text/javascript" src="/app/assets/js/jquery-2.2.0.min.js"></script>-->
 <script type="text/javascript" src="/app/assets/release/wangEditor.js"></script>
 <script>
     /**
@@ -85,7 +86,8 @@
      */
     var E = window.wangEditor;
     var editor2 = new E('#Editor');
-    editor2.customConfig.uploadImgServer = '/app/views/dataBase/PostPictures';
+//    editor2.customConfig.uploadImgServer = '/app/views/dataBase/PostPictures';
+    editor2.customConfig.uploadImgServer = '/admin/posting';
     editor2.create();
 
     /**
@@ -146,6 +148,7 @@
             xmlhttp.open("POST","/admin/posting/",true);
             xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
             xmlhttp.send("title="+title+"&author="+author+"&content="+content+"&summary="+summary+"&type="+getType());
+            window.location.href="/index/index/";
         }
     }
 

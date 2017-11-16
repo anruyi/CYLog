@@ -1,5 +1,5 @@
 <?php
-
+namespace core\lib;
 #
 #
 # Parsedown

@@ -86,37 +86,42 @@ class indexCtrl extends CyPHP
     {
         $model = new AdminModel();
         $data = $model->getLogin();
-        p($data);
 
         $username = post('username');
         $password = post('password','null');
+        $isRightUser = false;
 
+        /**
+         * 查找用户并验证密码
+         */
         if($_SESSION['userLoginState']==0) {
-            /**
-             * 循环获取数据库中username值和post数据进行比较
-             * 1. 设置session username名称
-             * 2. 设置session userLoginState状态
-             * 3. 返回前台数据 notice
-             */
             foreach ($data as $key=>$value) {
+
                 if ($value['username'] == $username){
+                    $isRightUser = true;
+                    $this->assign('notice','right user');
+                    p($this->assign['notice']);
+
                     if ($value['password'] == $password) {
 
                         $_SESSION['username'] = $username;
 
                         $_SESSION['userLoginState'] = 1;
 
-                        $this->assign('notice',$_SESSION['username']);
-
                         jump('/index/index');
+
+                    }else {
+                        $this->assign('notice2',"wrong password".rand(1,20));
                     }
                 } else {
+                    if($isRightUser == false)
+                        $this->assign('notice','wrong user');
                     continue;
                 }
             }
         } else if ($_SESSION['userLoginState']==1){
             $_SESSION['userLoginState'] = 1;
-            $this->assign('notice',请勿重复登陆);
+            $this->assign('notice','请勿重复登陆');
         } else {
             $_SESSION['userLoginState'] = 0;
             $this->assign('notice',"您尚未登陆");
@@ -193,8 +198,5 @@ class indexCtrl extends CyPHP
         } else {
             return $array[0]['content'];
         }
-
     }
-
-
 }
