@@ -44,6 +44,47 @@ class ParseDown
         return $markup;
     }
 
+
+    #
+    # parse HEXO title and other header
+    #
+
+    function header($text)
+    {
+        $massage = array();
+
+        $markLine = -1;
+
+        # make sure no definitions are set
+        $this->DefinitionData = array();
+
+        # standardize line breaks
+        $text = str_replace(array("\r\n", "\r"), "\n", $text);
+
+        # remove surrounding line breaks
+        $text = trim($text, "\n");
+
+        # split text into lines //拆分成行
+        $lines = explode("\n", $text);
+
+        foreach ($lines as $key=>$line)
+        {
+            if ($line == '---')
+            {
+                $markLine = -$markLine;
+                continue;
+            }
+
+            if ($markLine == 1) {
+                $massage[strstr($line,':',true)] = ltrim(strstr($line,' ',false));
+            } else {
+                break;
+            }
+        }
+        return $massage;
+    }
+
+
     #
     # Setters
     #
