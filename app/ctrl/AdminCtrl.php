@@ -6,6 +6,7 @@ use app\model\AdminModel;
 use app\model\IndexModel;
 use core\CyPHP;
 use core\lib\Log;
+use vendor\uploadFile\Upload;
 
 /**
  * Class AdminCtrl
@@ -71,7 +72,27 @@ class AdminCtrl extends CyPHP
             jump("/index/index");
         }
 
+        $this->assign('userLoginState',$_SESSION['userLoginState']);
         $this->display('postEditor.html');
+    }
+
+    public function postMarkDown()
+    {
+        $fileInfo = array();
+
+        $extension = array('md');
+
+        $mime = array('application/octet-stream');
+
+        $file = new Upload('myFile',2097152,'./app/assets/posts/uploads/',false,$extension,$mime);
+
+        $fileInfo = $file->uploadFiles();
+
+        if(is_array($fileInfo)){
+            p("正确");
+        }else {
+            p($fileInfo);
+        }
     }
 
     /*
